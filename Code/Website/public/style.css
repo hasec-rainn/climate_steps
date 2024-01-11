@@ -1,0 +1,94 @@
+body {
+    background-color: lightblue;
+}
+  
+h1 {
+    color: rgb(128, 0, 107);
+    margin-left: 20px;
+}
+
+.slider_1 {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 20%; /* Full-width */
+    border-radius: 5px;
+    height: 15px; /* Specified height */
+    background: rgb(0, 0, 0); /* slider background */
+    ; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.slider_1::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%; 
+    background: #DE6666;
+    cursor: pointer;
+}
+
+.slider_1::-moz-range-track {
+    background: rgb(6, 6, 223);
+    height: 20px;
+}
+
+.slider_1::-webkit-slider-runnable-track {
+    background: tomato;
+    height: 10px;
+}
+
+
+
+
+
+
+
+
+
+.barrier_slider {
+    --tc: #B85555; /*thumb color*/
+    --g: 1px; /*the gap in the thumb*/
+    --l: 10px; /*line thickness*/
+    --ts: 20px; /*thumb size*/
+    --bc: #B85555; /*background color*/
+    --fc:  #493232; /*foreground color*/
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    
+
+    width: 400px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+.barrier_slider::-webkit-slider-thumb {
+    height: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}
