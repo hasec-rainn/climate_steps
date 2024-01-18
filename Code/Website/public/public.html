@@ -306,14 +306,12 @@
 
     .adv_search_embeded_dropdown {
         --b: 10px;
-        display: none; /*for making adv_search a dropdown by default*/
+        display: none;
         background-color: #5898CF;
-        box-shadow: 0px 0px 0px var(--b) #3B6AB3;
-        width: var(--bw);
         color: whitesmoke;
         padding: 5px;
         padding-top: 10px;
-        margin: var(--b);
+        margin: 0;
     }
 
     .show { display: block; }
@@ -535,7 +533,7 @@
 
     <!-- Additional Dropdown Options -->
     <i onclick="toggleDropDown('adv_search_embeded_dropdown')" class="fa fa-chevron-down adv_search_drop_chevron" aria-hidden="true"></i>
-    <div id="adv_search_embeded_dropdown" class="adv_search">
+    <div id="adv_search_embeded_dropdown" class="adv_search_embeded_dropdown">
         <!-- Action Range -->
         <div class="adv_search_option">
             <div class="tooltip">
