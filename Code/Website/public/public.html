@@ -19,7 +19,9 @@
         --ts: 20px; /*thumb size*/
         --w: 400px; /*width of the slider*/
         --h: 30px; /*slider height*/
-        --bw: 425px /*container width for adv search options*/
+        --bw: 425px; /*container width for adv search options*/
+        --bc: #7AB5DA; /*Background color in dropdown*/
+        --tc: black; /*Color of text in dialoge boxes*/
     }
     
     body {
@@ -295,10 +297,10 @@
     .adv_search {
         --b: 10px;
         display: none; /*for making adv_search a dropdown by default*/
-        background-color: #5898CF;
+        background-color: var(--bc);
         box-shadow: 0px 0px 0px var(--b) #3B6AB3;
         width: var(--bw);
-        color: whitesmoke;
+        color: var(--tc);
         padding: 5px;
         padding-top: 10px;
         margin: var(--b);
@@ -307,8 +309,8 @@
     .adv_search_embeded_dropdown {
         --b: 10px;
         display: none;
-        background-color: #5898CF;
-        color: whitesmoke;
+        background-color: var(--bc);
+        color: var(--tc);
         padding: 0px;
         padding-top: 10px;
         margin: 0;
@@ -333,11 +335,11 @@
         text-align: center;
         font-size: 35px;
         padding-bottom: 30px;
-        color:lightgray;
+        color:rgb(0, 0, 0);
     }
 
     .adv_search_drop_chevron:hover {
-        color:whitesmoke;
+        color:rgb(87, 87, 87);
     }
 
     .adv_search_checkbox {
