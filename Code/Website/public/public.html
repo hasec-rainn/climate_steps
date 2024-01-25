@@ -22,6 +22,7 @@
         --bw: 425px; /*container width for adv search options*/
         --bc: #7AB5DA; /*Background color in dropdown*/
         --tc: black; /*Color of text in dialoge boxes*/
+        --disabled: grey; /*Color of text that has been disabled*/
     }
     
     body {
@@ -354,6 +355,11 @@
         display: none;
     }
 
+    /*Used to show a particular slider is disabled by greying out the title*/
+    .disabled_title {
+        color: grey;
+    }
+
     .slider_value {
         font-size: 24px;
         text-align: center;
@@ -376,7 +382,7 @@
             <input type="checkbox" id="hi_checkbox" checked>
             <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Health Impact
+        <h3 id="hi_title" class="adv_search_title">Health Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
             </div>
@@ -398,7 +404,7 @@
             <input type="checkbox" id="li_checkbox" checked>
             <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Lineage Impact
+        <h3 id="li_title" class="adv_search_title">Lineage Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
             </div>
@@ -421,7 +427,7 @@
             <input type="checkbox" id="ci_checkbox" checked>
             <span class="tooltiptext">Toggles if "Carbon Impact" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Carbon Impact
+        <h3 id="ci_title" class="adv_search_title">Carbon Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">Where you want your action to have the most impact on carbon outputs.</span>
             </div>
@@ -446,7 +452,7 @@
             <input type="checkbox" id="ej_checkbox" checked>
             <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Enviornmental Justice
+        <h3 id="ej_title" class="adv_search_title">Enviornmental Justice
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
             </div>
@@ -470,7 +476,7 @@
             <input type="checkbox" id="e_checkbox" checked>
             <span class="tooltiptext">Toggles if "Ease" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Ease
+        <h3 id="e_title" class="adv_search_title">Ease
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">How easy to complete you would like your action to be.</span>
             </div>
@@ -494,7 +500,7 @@
             <input type="checkbox" id="af_checkbox" checked>
             <span class="tooltiptext">Toggles if "Financing" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Financing
+        <h3 id="af_title" class="adv_search_title">Financing
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">How much money you would like to spend (or receive) from an action.</span>
             </div>
@@ -516,7 +522,7 @@
             <input type="checkbox" id="s_checkbox" checked>
             <span class="tooltiptext">Toggles if "Sociality" is factored into your search.</span>
         </div>
-        <h3 class="adv_search_title">Sociality
+        <h3 id="s_title" class="adv_search_title">Sociality
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">How social would you like your action to be?</span>
             </div>
@@ -543,7 +549,7 @@
                 <input type="checkbox" id="ar_checkbox" checked>
                 <span class="tooltiptext">Toggles if Range is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Range
+            <h3 id="ar_title" class="adv_search_title">Range
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How far you would like your action's effects to be felt.</span>
                 </div>
@@ -567,7 +573,7 @@
                 <input type="checkbox" id="al_checkbox" checked>
                 <span class="tooltiptext">Toggles if "Location" is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Location
+            <h3 id="al_title" class="adv_search_title">Location
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
                 </div>
@@ -591,7 +597,7 @@
                 <input type="checkbox" id="as_checkbox" checked>
                 <span class="tooltiptext">Toggles if "Skills" is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Skills
+            <h3 id="as_title" class="adv_search_title">Skills
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
                 </div>
@@ -613,7 +619,7 @@
                 <input type="checkbox" id="sa_checkbox" checked>
                 <span class="tooltiptext">Toggles if "Social Acceptability" is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Social Acceptability
+            <h3 id="sa_title" class="adv_search_title">Social Acceptability
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How socially acceptable an action is considered by society.</span>
                 </div>
@@ -635,7 +641,7 @@
                 <input type="checkbox" id="ai_checkbox" checked>
                 <span class="tooltiptext">Toggles if "Impact" is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Wildlife Impact
+            <h3 id="ai_title" class="adv_search_title">Wildlife Impact
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How much impact, in regards to biodiversity and wildlife, would you like your action to have?</span>
                 </div>
@@ -657,7 +663,7 @@
                 <input type="checkbox" id="n_checkbox" checked>
                 <span class="tooltiptext">Toggles if "Noticability" is factored into your search.</span>
             </div>
-            <h3 class="adv_search_title">Noticability
+            <h3 id="n_title" class="adv_search_title">Noticability
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How noticable would you like your action to be?</span>
                 </div>
@@ -682,11 +688,14 @@
 <script>
 
     /*slider_id is the id of the slider composite to be disabled or enabled,
-    and checkbox is the checkbox that will perform the toggle when clicked*/
-    function toggleSlider(checkbox, slider_id) {
-        document.getElementById(checkbox).addEventListener("click", (event) => 
-            {document.getElementById(slider_id).classList.toggle("disabled_slider")}
-        );
+    checkbox is the checkbox that will perform the toggle when clicked,
+    and title_id is the title that will be greyed out*/
+    function toggleSlider(checkbox, slider_id, title_id) {
+        document.getElementById(checkbox).addEventListener("click", (event) => {
+                document.getElementById(slider_id).classList.toggle("disabled_slider")
+                document.getElementById(title_id).classList.toggle("disabled_title")
+            });
+
     }
 
     /* When the user clicks on the button,
@@ -728,7 +737,7 @@
         }
     });
 
-    toggleSlider("hi_checkbox", "hi_slider_composite");
+    toggleSlider("hi_checkbox", "hi_slider_composite", "hi_title");
 
 
 
@@ -747,7 +756,7 @@
             li_value.textContent = "All Future Generations";
         }
     });
-    toggleSlider("li_checkbox", "li_slider_composite");
+    toggleSlider("li_checkbox", "li_slider_composite","li_title");
 
 
 
@@ -755,7 +764,7 @@
     const ci_value = document.querySelector("#ci_value");
     const carbon_impact = document.querySelector("#carbon_impact");
     location_updater(ci_value, carbon_impact);
-    toggleSlider("ci_checkbox", "ci_slider_composite");
+    toggleSlider("ci_checkbox", "ci_slider_composite","ci_title");
 
 
 
@@ -763,7 +772,7 @@
     const ej_value = document.querySelector("#ej_value");
     const enviornmental_justice = document.querySelector("#enviornmental_justice");
     location_updater(ej_value, enviornmental_justice);
-    toggleSlider("ej_checkbox", "ej_slider_composite");
+    toggleSlider("ej_checkbox", "ej_slider_composite", "ej_title");
 
 
 
@@ -771,7 +780,7 @@
     const ar_value = document.querySelector("#ar_value");
     const action_range = document.querySelector("#action_range");
     location_updater(ar_value, action_range);
-    toggleSlider("ar_checkbox", "ar_slider_composite");
+    toggleSlider("ar_checkbox", "ar_slider_composite", "ar_title");
 
 
 
@@ -779,7 +788,7 @@
     const al_value = document.querySelector("#al_value");
     const action_location = document.querySelector("#action_location");
     location_updater(al_value, action_location);
-    toggleSlider("al_checkbox", "al_slider_composite");
+    toggleSlider("al_checkbox", "al_slider_composite","al_title");
 
 
 
@@ -799,7 +808,7 @@
             e_value.textContent = "Very Hard";
         }
     })
-    toggleSlider("e_checkbox", "e_slider_composite");
+    toggleSlider("e_checkbox", "e_slider_composite", "e_title");
 
 
 
@@ -815,7 +824,7 @@
             s_value.textContent = "Grows Skills";
         }
     })
-    toggleSlider("as_checkbox", "as_slider_composite");
+    toggleSlider("as_checkbox", "as_slider_composite", "as_title");
 
 
 
@@ -831,7 +840,7 @@
             sa_value.textContent = "Challenged";
         }
     })
-    toggleSlider("sa_checkbox", "sa_slider_composite");
+    toggleSlider("sa_checkbox", "sa_slider_composite", "sa_title");
 
 
 
@@ -847,7 +856,7 @@
             af_value.textContent = "High Cost";
         }
     })
-    toggleSlider("af_checkbox", "af_slider_composite");
+    toggleSlider("af_checkbox", "af_slider_composite", "af_title");
 
 
 
@@ -863,7 +872,7 @@
             ai_value.textContent = "Large";
         }
     })
-    toggleSlider("ai_checkbox", "ai_slider_composite");
+    toggleSlider("ai_checkbox", "ai_slider_composite", "ai_title");
 
 
 
@@ -881,7 +890,7 @@
             n_value.textContent = "Very Social";
         }
     })
-    toggleSlider("n_checkbox", "n_slider_composite");
+    toggleSlider("n_checkbox", "n_slider_composite", "n_title");
 
 
 
@@ -897,6 +906,6 @@
             as_value.textContent = "Meet new people";
         }
     })
-    toggleSlider("s_checkbox", "s_slider_composite");
+    toggleSlider("s_checkbox", "s_slider_composite", "s_title");
 
 </script>
