@@ -732,16 +732,25 @@
     //Health Impact
     const hi_value = document.querySelector("#hi_value");
     const health_impact = document.querySelector("#health_impact");
+    const hi_list = document.getElementById("hi_list").options;
     health_impact.addEventListener("click", (event) => {
+
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<hi_list.length; i++) {
+            hi_list[i].classList.remove("bold_tick")
+        }
+
         if (event.target.value < 33) {
+            hi_list[0].classList.add("bold_tick")
             hi_value.textContent = "My Health";
         } else if (event.target.value > 66) {
+            hi_list[2].classList.add("bold_tick")
             hi_value.textContent = "Global health";
         } else {
+            hi_list[1].classList.add("bold_tick")
             hi_value.textContent = "My Family's health";
         }
     });
-
     toggleSlider("hi_checkbox", "hi_slider_composite");
 
 
@@ -750,14 +759,25 @@
     //Lineage Impact
     const li_value = document.querySelector("#li_value");
     const lineage_impact = document.querySelector("#lineage_impact");
+    const li_list = document.getElementById("li_list").options;
     lineage_impact.addEventListener("click", (event) => {
+
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<li_list.length; i++) {
+            li_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 13) {
+            li_list[0].classList.add("bold_tick");
             li_value.textContent = "Just Me";
         } else if (event.target.value < 38) {
+            li_list[1].classList.add("bold_tick");
             li_value.textContent = "Children";
         } else if (event.target.value < 61) {
+            li_list[2].classList.add("bold_tick");
             li_value.textContent = "Grandchildren";
         } else {
+            li_list[3].classList.add("bold_tick");
             li_value.textContent = "All Future Generations";
         }
     });
