@@ -359,7 +359,10 @@
         text-align: center;
     }
 
-
+    .bold_tick {
+        font-weight: bolder;
+        color: red;
+    }
 
 </style>
 
@@ -383,7 +386,7 @@
         </h3>
         <div id="hi_slider_composite" class="">
             <input id="health_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="health_ticks">
+            <datalist id="hi_list">
                 <option value="0" label="My Health"></option>
                 <option value="50" label="My Family's Health"></option>
                 <option value="100" label="Global Health"></option>
@@ -405,7 +408,7 @@
         </h3>
         <div id="li_slider_composite">
             <input id="lineage_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ease_ticks">
+            <datalist id="li_list">
                 <option value="0" label="Just Me"></option>
                 <option value="33" label="Children"></option>
                 <option value="66" label="Grandchildren"></option>
@@ -428,7 +431,7 @@
         </h3>
         <div id="ci_slider_composite">
             <input id="carbon_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ci_ticks">
+            <datalist id="ci_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
@@ -453,7 +456,7 @@
         </h3>
         <div id="ej_slider_composite">
             <input id="enviornmental_justice" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ej_ticks">
+            <datalist id="ej_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
@@ -477,7 +480,7 @@
         </h3>
         <div id="e_slider_composite">
             <input id="ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="e_list">
                 <option value="0" label="Very Easy"></option>
                 <option value="25" label="Easy"></option>
                 <option value="50" label="Average"></option>
@@ -501,7 +504,7 @@
         </h3>
         <div id="af_slider_composite">
             <input id="action_financing" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="af_list">
                 <option value="0" label="Money Back"></option>
                 <option value="50" label="Low Cost"></option>
                 <option value="100" label="High Cost"></option>
@@ -523,7 +526,7 @@
         </h3>
         <div id="s_slider_composite">
             <input id="action_sociality" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="s_list">
                 <option value="0" label="Private"></option>
                 <option value="50" label="Within my network"></option>
                 <option value="100" label="Meet new people"></option>
@@ -550,7 +553,7 @@
             </h3>
             <div id="ar_slider_composite">
                 <input id="action_range" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-                <datalist id="ar_ticks">
+                <datalist id="ar_list">
                     <option value="0" label="Local"></option>
                     <option value="25" label="Town/City"></option>
                     <option value="50" label="State"></option>
@@ -574,7 +577,7 @@
             </h3>
             <div id="al_slider_composite">
             <input id="action_location" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="al_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
@@ -598,7 +601,7 @@
             </h3>
             <div id="as_slider_composite">
                 <input id="skills" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="as_list">
                     <option value="0" label="No Skills"></option>
                     <option value="50" label="Uses Current Skills"></option>
                     <option value="100" label="Grows Skills"></option>
@@ -620,7 +623,7 @@
             </h3>
             <div id="sa_slider_composite">
                 <input id="social_acceptability" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="sa_list">
                     <option value="0" label="Accepted"></option>
                     <option value="50" label="Neutral"></option>
                     <option value="100" label="Challenged"></option>
@@ -642,7 +645,7 @@
             </h3>
             <div id="ai_slider_composite">
                 <input id="action_impact" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="ai_list">
                     <option value="0" label="Small"></option>
                     <option value="50" label="Medium"></option>
                     <option value="100" label="Large"></option>
@@ -664,7 +667,7 @@
             </h3>
             <div id="n_slider_composite">
                 <input id="noticability" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="n_list">
                     <option value="0" label="Private"></option>
                     <option value="25" label="Discrete"></option>
                     <option value="50" label="Friends & Family"></option>
@@ -696,19 +699,30 @@
     }
 
     //Function for Location-based sliders
-    function location_updater(value, slider) {
+    function location_updater(value, slider, slider_list) {
         slider.addEventListener("click", (event) => {
-        if (event.target.value < 13) {
-            value.textContent = "Local";
-        } else if (event.target.value < 38) {
-            value.textContent = "Town/City";
-        } else if (event.target.value < 63) {
-            value.textContent = "State";
-        } else if (event.target.value < 88) {
-            value.textContent = "National";
-        } else {
-            value.textContent = "Global";
-        }
+            
+            //Ensures only one tick is bolded at a time
+            for(i=0; i<slider_list.length; i++) {
+                slider_list[i].classList.remove("bold_tick")
+            }
+
+            if (event.target.value < 13) {
+                slider_list[0].classList.add("bold_tick");
+                value.textContent = "Local";
+            } else if (event.target.value < 38) {
+                slider_list[1].classList.add("bold_tick");
+                value.textContent = "Town/City";
+            } else if (event.target.value < 63) {
+                slider_list[2].classList.add("bold_tick");
+                value.textContent = "State";
+            } else if (event.target.value < 88) {
+                slider_list[3].classList.add("bold_tick");
+                value.textContent = "National";
+            } else {
+                slider_list[4].classList.add("bold_tick");
+                value.textContent = "Global";
+            }
         })  
     }
 
@@ -754,7 +768,8 @@
     //Carbon Impact
     const ci_value = document.querySelector("#ci_value");
     const carbon_impact = document.querySelector("#carbon_impact");
-    location_updater(ci_value, carbon_impact);
+    const ci_list = document.getElementById("ci_list").options;
+    location_updater(ci_value, carbon_impact, ci_list);
     toggleSlider("ci_checkbox", "ci_slider_composite");
 
 
