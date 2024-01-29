@@ -765,28 +765,32 @@
 
     //Carbon Impact
     const carbon_impact = document.querySelector("#carbon_impact");
-    location_updater(ci_value, carbon_impact);
+    const ci_list = document.getElementById("ci_list").options;
+    location_updater(carbon_impact, ci_list);
     toggleSlider("ci_checkbox", "ci_slider_composite","ci_title");
 
 
 
     //Enviornmental Justice
     const enviornmental_justice = document.querySelector("#enviornmental_justice");
-    location_updater(ej_value, enviornmental_justice);
+    const ej_list = document.getElementById("ej_list").options;
+    location_updater(enviornmental_justice, ej_list);
     toggleSlider("ej_checkbox", "ej_slider_composite", "ej_title");
 
 
 
     //Action Range
     const action_range = document.querySelector("#action_range");
-    location_updater(ar_value, action_range);
+    const ar_list = document.getElementById("ar_list").options;
+    location_updater(action_range, ar_list);
     toggleSlider("ar_checkbox", "ar_slider_composite", "ar_title");
 
 
 
     //Action Location
     const action_location = document.querySelector("#action_location");
-    location_updater(al_value, action_location);
+    const al_list = document.getElementById("al_list").options;
+    location_updater(action_location, al_list);
     toggleSlider("al_checkbox", "al_slider_composite","al_title");
 
 
