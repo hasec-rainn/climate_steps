@@ -359,12 +359,11 @@
         color: grey;
     }
 
-    .slider_value {
-        font-size: 24px;
-        text-align: center;
+
+    .bold_tick {
+        font-weight: bolder;
+        font-size: large;
     }
-
-
 
 </style>
 
@@ -388,12 +387,11 @@
         </h3>
         <div id="hi_slider_composite" class="">
             <input id="health_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="health_ticks">
+            <datalist id="hi_list">
                 <option value="0" label="My Health"></option>
                 <option value="50" label="My Family's Health"></option>
                 <option value="100" label="Global Health"></option>
             </datalist>
-            <div class="slider_value"><output  id="hi_value"></output></div>
         </div>
     </div>
 
@@ -410,13 +408,12 @@
         </h3>
         <div id="li_slider_composite">
             <input id="lineage_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ease_ticks">
+            <datalist id="li_list">
                 <option value="0" label="Just Me"></option>
                 <option value="33" label="Children"></option>
                 <option value="66" label="Grandchildren"></option>
                 <option value="100" label="All Future Generations"></option>
             </datalist>
-            <div class="slider_value"><output  id="li_value"></output></div>
         </div>
     </div>
 
@@ -433,14 +430,13 @@
         </h3>
         <div id="ci_slider_composite">
             <input id="carbon_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ci_ticks">
+            <datalist id="ci_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
                 <option value="75" label="National"></option>
                 <option value="100" label="Global"></option>
             </datalist>
-            <div class="slider_value"><output  id="ci_value"></output></div>
         </div>
         
     </div>
@@ -458,14 +454,13 @@
         </h3>
         <div id="ej_slider_composite">
             <input id="enviornmental_justice" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ej_ticks">
+            <datalist id="ej_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
                 <option value="75" label="National"></option>
                 <option value="100" label="Global"></option>
             </datalist>
-            <div class="slider_value"><output  id="ej_value"></output></div>
         </div>
     </div>
 
@@ -482,14 +477,13 @@
         </h3>
         <div id="e_slider_composite">
             <input id="ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="e_list">
                 <option value="0" label="Very Easy"></option>
                 <option value="25" label="Easy"></option>
                 <option value="50" label="Average"></option>
                 <option value="75" label="Hard"></option>
                 <option value="100" label="Very Hard"></option>
             </datalist>
-            <div class="slider_value"><output  id="e_value"></output></div>
         </div>
     </div>
 
@@ -506,12 +500,11 @@
         </h3>
         <div id="af_slider_composite">
             <input id="action_financing" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="af_list">
                 <option value="0" label="Money Back"></option>
                 <option value="50" label="Low Cost"></option>
                 <option value="100" label="High Cost"></option>
             </datalist>
-            <div class="slider_value"><output  id="af_value"></output></div>
         </div>
     </div>
 
@@ -528,12 +521,11 @@
         </h3>
         <div id="s_slider_composite">
             <input id="action_sociality" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="s_list">
                 <option value="0" label="Private"></option>
                 <option value="50" label="Within my network"></option>
                 <option value="100" label="Meet new people"></option>
             </datalist>
-            <div class="slider_value"><output  id="as_value"></output></div>
         </div>
     </div>
 
@@ -555,14 +547,13 @@
             </h3>
             <div id="ar_slider_composite">
                 <input id="action_range" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-                <datalist id="ar_ticks">
+                <datalist id="ar_list">
                     <option value="0" label="Local"></option>
                     <option value="25" label="Town/City"></option>
                     <option value="50" label="State"></option>
                     <option value="75" label="National"></option>
                     <option value="100" label="Global"></option>
                 </datalist>
-                <div class="slider_value"><output  id="ar_value"></output></div>
             </div>
         </div>
 
@@ -579,14 +570,13 @@
             </h3>
             <div id="al_slider_composite">
             <input id="action_location" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ei_ticks">
+            <datalist id="al_list">
                 <option value="0" label="Local"></option>
                 <option value="25" label="Town/City"></option>
                 <option value="50" label="State"></option>
                 <option value="75" label="National"></option>
                 <option value="100" label="Global"></option>
             </datalist>
-            <div class="slider_value"><output  id="al_value"></output></div>
             </div>
         </div>
 
@@ -603,12 +593,11 @@
             </h3>
             <div id="as_slider_composite">
                 <input id="skills" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="as_list">
                     <option value="0" label="No Skills"></option>
                     <option value="50" label="Uses Current Skills"></option>
                     <option value="100" label="Grows Skills"></option>
                 </datalist>
-                <div class="slider_value"><output  id="s_value"></output></div>
             </div>
         </div>
 
@@ -625,12 +614,11 @@
             </h3>
             <div id="sa_slider_composite">
                 <input id="social_acceptability" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="sa_list">
                     <option value="0" label="Accepted"></option>
                     <option value="50" label="Neutral"></option>
                     <option value="100" label="Challenged"></option>
                 </datalist>
-                <div class="slider_value"><output  id="sa_value"></output></div>
             </div>
         </div>
         
@@ -647,12 +635,11 @@
             </h3>
             <div id="ai_slider_composite">
                 <input id="action_impact" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="ai_list">
                     <option value="0" label="Small"></option>
                     <option value="50" label="Medium"></option>
                     <option value="100" label="Large"></option>
                 </datalist>
-                <div class="slider_value"><output  id="ai_value"></output></div>
             </div>
         </div>
 
@@ -669,13 +656,12 @@
             </h3>
             <div id="n_slider_composite">
                 <input id="noticability" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="ei_ticks">
+                <datalist id="n_list">
                     <option value="0" label="Private"></option>
                     <option value="25" label="Discrete"></option>
                     <option value="50" label="Friends & Family"></option>
                     <option value="100" label="Very Social"></option>
                 </datalist>
-                <div class="slider_value"><output  id="n_value"></output></div>
             </div>
         </div>
     </div>
@@ -704,19 +690,25 @@
     }
 
     //Function for Location-based sliders
-    function location_updater(value, slider) {
+    function location_updater(slider, slider_list) {
         slider.addEventListener("click", (event) => {
-        if (event.target.value < 13) {
-            value.textContent = "Local";
-        } else if (event.target.value < 38) {
-            value.textContent = "Town/City";
-        } else if (event.target.value < 63) {
-            value.textContent = "State";
-        } else if (event.target.value < 88) {
-            value.textContent = "National";
-        } else {
-            value.textContent = "Global";
-        }
+            
+            //Ensures only one tick is bolded at a time
+            for(i=0; i<slider_list.length; i++) {
+                slider_list[i].classList.remove("bold_tick")
+            }
+
+            if (event.target.value < 13) {
+                slider_list[0].classList.add("bold_tick");
+            } else if (event.target.value < 38) {
+                slider_list[1].classList.add("bold_tick");
+            } else if (event.target.value < 63) {
+                slider_list[2].classList.add("bold_tick");
+            } else if (event.target.value < 88) {
+                slider_list[3].classList.add("bold_tick");
+            } else {
+                slider_list[4].classList.add("bold_tick");
+            }
         })  
     }
 
@@ -724,15 +716,21 @@
 
 
     //Health Impact
-    const hi_value = document.querySelector("#hi_value");
     const health_impact = document.querySelector("#health_impact");
+    const hi_list = document.getElementById("hi_list").options;
     health_impact.addEventListener("click", (event) => {
+
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<hi_list.length; i++) {
+            hi_list[i].classList.remove("bold_tick")
+        }
+
         if (event.target.value < 33) {
-            hi_value.textContent = "My Health";
+            hi_list[0].classList.add("bold_tick")
         } else if (event.target.value > 66) {
-            hi_value.textContent = "Global health";
+            hi_list[2].classList.add("bold_tick")
         } else {
-            hi_value.textContent = "My Family's health";
+            hi_list[1].classList.add("bold_tick")
         }
     });
 
@@ -742,17 +740,23 @@
 
 
     //Lineage Impact
-    const li_value = document.querySelector("#li_value");
     const lineage_impact = document.querySelector("#lineage_impact");
+    const li_list = document.getElementById("li_list").options;
     lineage_impact.addEventListener("click", (event) => {
+
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<li_list.length; i++) {
+            li_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 13) {
-            li_value.textContent = "Just Me";
+            li_list[0].classList.add("bold_tick");
         } else if (event.target.value < 38) {
-            li_value.textContent = "Children";
+            li_list[1].classList.add("bold_tick");
         } else if (event.target.value < 61) {
-            li_value.textContent = "Grandchildren";
+            li_list[2].classList.add("bold_tick");
         } else {
-            li_value.textContent = "All Future Generations";
+            li_list[3].classList.add("bold_tick");
         }
     });
     toggleSlider("li_checkbox", "li_slider_composite","li_title");
@@ -760,7 +764,6 @@
 
 
     //Carbon Impact
-    const ci_value = document.querySelector("#ci_value");
     const carbon_impact = document.querySelector("#carbon_impact");
     location_updater(ci_value, carbon_impact);
     toggleSlider("ci_checkbox", "ci_slider_composite","ci_title");
@@ -768,7 +771,6 @@
 
 
     //Enviornmental Justice
-    const ej_value = document.querySelector("#ej_value");
     const enviornmental_justice = document.querySelector("#enviornmental_justice");
     location_updater(ej_value, enviornmental_justice);
     toggleSlider("ej_checkbox", "ej_slider_composite", "ej_title");
@@ -776,7 +778,6 @@
 
 
     //Action Range
-    const ar_value = document.querySelector("#ar_value");
     const action_range = document.querySelector("#action_range");
     location_updater(ar_value, action_range);
     toggleSlider("ar_checkbox", "ar_slider_composite", "ar_title");
@@ -784,7 +785,6 @@
 
 
     //Action Location
-    const al_value = document.querySelector("#al_value");
     const action_location = document.querySelector("#action_location");
     location_updater(al_value, action_location);
     toggleSlider("al_checkbox", "al_slider_composite","al_title");
@@ -792,19 +792,24 @@
 
 
     //Ease
-    const e_value = document.querySelector("#e_value");
     const ease = document.querySelector("#ease");
+    const e_list = document.getElementById("e_list").options;
     ease.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<e_list.length; i++) {
+            e_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 13) {
-            e_value.textContent = "Very Easy";
+            e_list[0].classList.add("bold_tick");
         } else if (event.target.value < 38) {
-            e_value.textContent = "Easy";
+            e_list[1].classList.add("bold_tick");
         } else if (event.target.value < 63) {
-            e_value.textContent = "Average";
+            e_list[2].classList.add("bold_tick");
         } else if (event.target.value < 88) {
-            e_value.textContent = "Hard";
+            e_list[3].classList.add("bold_tick");
         } else {
-            e_value.textContent = "Very Hard";
+            e_list[4].classList.add("bold_tick");
         }
     })
     toggleSlider("e_checkbox", "e_slider_composite", "e_title");
@@ -812,15 +817,20 @@
 
 
     //Skills
-    const s_value = document.querySelector("#s_value");
     const skills = document.querySelector("#skills");
+    const as_list = document.getElementById("as_list").options;
     skills.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<as_list.length; i++) {
+            as_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 33) {
-            s_value.textContent = "No Skills";
+            as_list[0].classList.add("bold_tick");
         } else if (event.target.value < 66) {
-            s_value.textContent = "Uses Current Skills";
+            as_list[1].classList.add("bold_tick");
         } else {
-            s_value.textContent = "Grows Skills";
+            as_list[2].classList.add("bold_tick");
         }
     })
     toggleSlider("as_checkbox", "as_slider_composite", "as_title");
@@ -828,15 +838,20 @@
 
 
     //Social Acceptability
-    const sa_value = document.querySelector("#sa_value");
     const social_acceptability = document.querySelector("#social_acceptability");
+    const sa_list = document.getElementById("sa_list").options;
     social_acceptability.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<sa_list.length; i++) {
+            sa_list[i].classList.remove("bold_tick");
+        }        
+        
         if (event.target.value < 33) {
-            sa_value.textContent = "Accepted";
+            sa_list[0].classList.add("bold_tick");
         } else if (event.target.value < 66) {
-            sa_value.textContent = "Neutral";
+            sa_list[1].classList.add("bold_tick");
         } else {
-            sa_value.textContent = "Challenged";
+            sa_list[2].classList.add("bold_tick");
         }
     })
     toggleSlider("sa_checkbox", "sa_slider_composite", "sa_title");
@@ -844,15 +859,20 @@
 
 
     //Action Financing
-    const af_value = document.querySelector("#af_value");
     const action_financing = document.querySelector("#action_financing");
+    const af_list = document.getElementById("af_list").options;
     action_financing.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<af_list.length; i++) {
+            af_list[i].classList.remove("bold_tick");
+        }        
+        
         if (event.target.value < 33) {
-            af_value.textContent = "Money Back";
+            af_list[0].classList.add("bold_tick");
         } else if (event.target.value < 66) {
-            af_value.textContent = "Low Cost";
+            af_list[1].classList.add("bold_tick");
         } else {
-            af_value.textContent = "High Cost";
+            af_list[2].classList.add("bold_tick");
         }
     })
     toggleSlider("af_checkbox", "af_slider_composite", "af_title");
@@ -860,15 +880,20 @@
 
 
     //Action Impact
-    const ai_value = document.querySelector("#ai_value");
     const action_impact = document.querySelector("#action_impact");
+    const ai_list = document.getElementById("ai_list").options;
     action_impact.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<ai_list.length; i++) {
+            ai_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 33) {
-            ai_value.textContent = "Small";
+            ai_list[0].classList.add("bold_tick");
         } else if (event.target.value < 66) {
-            ai_value.textContent = "Medium";
+            ai_list[1].classList.add("bold_tick");
         } else {
-            ai_value.textContent = "Large";
+            ai_list[2].classList.add("bold_tick");
         }
     })
     toggleSlider("ai_checkbox", "ai_slider_composite", "ai_title");
@@ -876,17 +901,22 @@
 
 
     //Noticability
-    const n_value = document.querySelector("#n_value");
     const noticability = document.querySelector("#noticability");
+    const n_list = document.getElementById("n_list").options;
     noticability.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<n_list.length; i++) {
+            n_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 13) {
-            n_value.textContent = "Private";
+            n_list[0].classList.add("bold_tick");
         } else if (event.target.value < 38) {
-            n_value.textContent = "Discrete";
+            n_list[1].classList.add("bold_tick");
         } else if (event.target.value < 75) {
-            n_value.textContent = "Friends & Family";
+            n_list[2].classList.add("bold_tick");
         } else {
-            n_value.textContent = "Very Social";
+            n_list[3].classList.add("bold_tick");
         }
     })
     toggleSlider("n_checkbox", "n_slider_composite", "n_title");
@@ -894,15 +924,20 @@
 
 
     //Sociality
-    const as_value = document.querySelector("#as_value");
     const action_sociality = document.querySelector("#action_sociality");
+    const s_list = document.getElementById("s_list").options;
     action_sociality.addEventListener("click", (event) => {
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<s_list.length; i++) {
+            s_list[i].classList.remove("bold_tick");
+        }
+
         if (event.target.value < 33) {
-            as_value.textContent = "Private";
+            s_list[0].classList.add("bold_tick");
         } else if (event.target.value < 66) {
-            as_value.textContent = "Within my network";
+            s_list[1].classList.add("bold_tick");
         } else {
-            as_value.textContent = "Meet new people";
+            s_list[2].classList.add("bold_tick");
         }
     })
     toggleSlider("s_checkbox", "s_slider_composite", "s_title");
