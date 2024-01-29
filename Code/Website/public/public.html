@@ -34,6 +34,68 @@
     }
 
 
+    .css-checkbox { 
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px; 
+        width: 1px; 
+        margin: -1px; 
+        padding: 0; 
+        border: 0; 
+    }
+    
+    #inputPreview { 
+        display: flex; 
+        gap: 20px; 
+        justify-content: center;	
+    }
+    
+    .css-checkbox + label { 
+        position: relative; 
+        font-size: 10px; 
+        cursor: pointer;
+        display: inline-flex; 
+        align-items: center; 
+        height: 27px; 
+        color: rgb(0, 0, 0); 
+    }
+    
+    .css-checkbox + label::before { 
+        content: " "; 
+        display: inline-block; 
+        vertical-align: middle; 
+        margin-right: 3px; 
+        width: 25px; 
+        height: 25px; 
+        background-color: white; 
+        border-width: 1px; 
+        border-style: solid; 
+        border-color: rgb(204, 204, 204); 
+        border-radius: 9px; 
+        box-shadow: none; 
+    }
+    
+    .css-checkbox:checked + label::after { 
+        content: " "; 
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDgwMDljIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+"); 
+        background-repeat: no-repeat; 
+        background-size: 20px 20px; 
+        background-position: center center; 
+        position: absolute; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin-left: 0px; 
+        left: 0px; 
+        top: 0px; 
+        text-align: center; 
+        background-color: transparent; 
+        font-size: 10px; 
+        height: 27px; 
+        width: 27px; 
+    }
+
     .tooltip {
         position: relative;
         display: inline-block;
@@ -371,13 +433,17 @@
 
 <h1>Hello world!</h1>
 
+<input id="check_1" type="checkbox" class="css-checkbox" checked>
+<label for="check_1"></label>
+
 <button onclick="toggleDropDown('adv_search_dropdown')" class="drop_button">Personalization Tool</button>
 <div id="adv_search_dropdown" class="adv_search">
 
     <!-- Health Impact -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="hi_checkbox" checked>
+            <input id="hi_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="hi_checkbox"></label>
             <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
         </div>
         <h3 id="hi_title" class="adv_search_title">Health Impact
@@ -398,7 +464,8 @@
     <!-- Lineage Impact -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="li_checkbox" checked>
+            <input id="li_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="li_checkbox"></label>
             <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
         </div>
         <h3 id="li_title" class="adv_search_title">Lineage Impact
@@ -420,7 +487,8 @@
     <!-- Carbon Impact -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="ci_checkbox" checked>
+            <input id="ci_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="ci_checkbox"></label>
             <span class="tooltiptext">Toggles if "Carbon Impact" is factored into your search.</span>
         </div>
         <h3 id="ci_title" class="adv_search_title">Carbon Impact
@@ -444,7 +512,8 @@
     <!-- Environmental Justice -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="ej_checkbox" checked>
+            <input id="ej_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="ej_checkbox"></label>
             <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
         </div>
         <h3 id="ej_title" class="adv_search_title">Enviornmental Justice
@@ -467,7 +536,8 @@
     <!-- Action Ease -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="e_checkbox" checked>
+            <input id="e_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="e_checkbox"></label>
             <span class="tooltiptext">Toggles if "Ease" is factored into your search.</span>
         </div>
         <h3 id="e_title" class="adv_search_title">Ease
@@ -490,7 +560,8 @@
     <!-- Action Financing -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="af_checkbox" checked>
+            <input id="af_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="af_checkbox"></label>
             <span class="tooltiptext">Toggles if "Financing" is factored into your search.</span>
         </div>
         <h3 id="af_title" class="adv_search_title">Financing
@@ -511,7 +582,8 @@
     <!-- Sociality -->
     <div class="adv_search_option">
         <div class="tooltip">
-            <input type="checkbox" id="s_checkbox" checked>
+            <input id="s_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="s_checkbox"></label>
             <span class="tooltiptext">Toggles if "Sociality" is factored into your search.</span>
         </div>
         <h3 id="s_title" class="adv_search_title">Sociality
@@ -537,7 +609,8 @@
         <!-- Action Range -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="ar_checkbox" checked>
+                <input id="ar_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="ar_checkbox"></label>
                 <span class="tooltiptext">Toggles if Range is factored into your search.</span>
             </div>
             <h3 id="ar_title" class="adv_search_title">Range
@@ -560,7 +633,8 @@
         <!-- Action Location -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="al_checkbox" checked>
+                <input id="al_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="al_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Location" is factored into your search.</span>
             </div>
             <h3 id="al_title" class="adv_search_title">Location
@@ -583,7 +657,8 @@
         <!-- Action Skills -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="as_checkbox" checked>
+                <input id="as_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="as_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Skills" is factored into your search.</span>
             </div>
             <h3 id="as_title" class="adv_search_title">Skills
@@ -604,7 +679,8 @@
         <!-- Social Acceptability -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="sa_checkbox" checked>
+                <input id="sa_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="sa_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Social Acceptability" is factored into your search.</span>
             </div>
             <h3 id="sa_title" class="adv_search_title">Social Acceptability
@@ -625,7 +701,8 @@
         <!-- Action Impact -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="ai_checkbox" checked>
+                <input id="ai_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="ai_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Impact" is factored into your search.</span>
             </div>
             <h3 id="ai_title" class="adv_search_title">Wildlife Impact
@@ -646,7 +723,8 @@
         <!-- Noticability -->
         <div class="adv_search_option">
             <div class="tooltip">
-                <input type="checkbox" id="n_checkbox" checked>
+                <input id="n_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="n_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Noticability" is factored into your search.</span>
             </div>
             <h3 id="n_title" class="adv_search_title">Noticability
