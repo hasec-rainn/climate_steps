@@ -20,9 +20,8 @@
         --w: 400px; /*width of the slider*/
         --h: 30px; /*slider height*/
         --bw: 425px; /*container width for adv search options*/
-        --bc: #7AB5DA; /*Background color in dropdown*/
-        --tc: black; /*Color of text in dialoge boxes*/
-        --disabled: grey; /*Color of text that has been disabled*/
+        --bc: #243844; /*Background color in dropdown*/
+        --tc: white; /*Color of text in dialoge boxes*/
     }
     
     body {
@@ -46,8 +45,8 @@
         font-size: 18px;
         visibility: hidden;
         width: 120px;
-        background-color: rgb(61, 61, 61);
-        color: #fff;
+        background-color: rgb(0, 0, 0);
+        color: var(--tc);
         text-align: center;
         padding: 5px 0;
         border-radius: 6px;
@@ -66,7 +65,7 @@
 
     .barrier_slider {
         --tc: #B85555; /*thumb color*/
-        --bc: #B85555; /*background color*/
+        --bc: #493232; /*#B85555; /*background color*/
         --fc:  #493232; /*foreground color*/
         appearance: none;
         background: none;
@@ -139,7 +138,7 @@
 
     .motivator_slider {
         --tc: #81B855; /*thumb color*/
-        --bc: #81B855; /*background color*/
+        --bc: #334932; /*#81B855; /*background color*/
         --fc:  #334932; /*foreground color*/
         appearance: none;
         background: none;
@@ -214,7 +213,7 @@
 
     .logistic_slider {
         --tc: #B0B855; /*thumb color*/
-        --bc: #B0B855; /*background color*/
+        --bc: #493F32; /*#B0B855; /*background color*/
         --fc:  #493F32; /*foreground color*/
         appearance: none;
         background: none;
@@ -336,11 +335,11 @@
         text-align: center;
         font-size: 35px;
         padding-bottom: 30px;
-        color:rgb(0, 0, 0);
+        color: var(--tc);
     }
 
     .adv_search_drop_chevron:hover {
-        color:rgb(87, 87, 87);
+        color:rgb(144, 144, 144);
     }
 
     .adv_search_checkbox {
