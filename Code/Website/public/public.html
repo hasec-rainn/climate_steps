@@ -29,12 +29,6 @@
     body {
         background-color: rgb(255, 255, 255);
     }
-    
-    h1 {
-        color: rgb(126, 86, 86);
-        margin-left: 20px;
-    }
-
 
     .css-checkbox { 
         position: absolute;
@@ -126,8 +120,13 @@
         visibility: visible;
     }
 
+    .wiat {
+        display: none;
+    }
+
     .radio_option {
         display: block;
+        padding-top: 10px;
     }
 
     /*Below is all CSS related to motivation, barrier, and opportunity sliders*/
@@ -384,6 +383,12 @@
 
     .show { display: block; }
 
+    .section_title {
+        width: var(--w);
+        margin: 0px;
+        text-align: center;
+    }
+
     .subsection_option {
         padding-bottom: 60px;
         padding-left: var(--b);
@@ -441,53 +446,91 @@
 <div id="adv_search_dropdown" class="adv_search">
 
     <!--Where I am at section -->
-    <!-- Neighborhood information-->>
-    <h1>Where I am at</h1>
-    <div id="neighborhood_option" class="subsection_option">
-        <form id="neighborhood">
-            <h3 class="subsection_title">My neighborhood is...</h3>
-            <div class="radio_option">
-                <input id="urban" name="neighborhood" type="radio" value="URBAN">
-                <label for="urban">Urban</label>
-            </div>
-            <div class="radio_option">
-                <input id="rural" name="neighborhood" type="radio" value="RURAL">
-                <label for="rural">Rural</label>
-            </div>
-            <div class="radio_option">
-                <input id="suburban" name="neighborhood" type="radio" value="SUBURBAN">
-                <label for="suburban">Suburban</label>
-            </div>
-            <div class="radio_option">
-                <input id="neighborhood_other" name="neighborhood" type="radio" value="OTHER_NEIGHBORHOOD">
-                <label for="neighborhood_other">Other</label>
-            </div>
-        </form>
+    <div class="tooltip">
+        <input id="wiat_checkbox" type="checkbox" class="css-checkbox" checked>
+        <label for="wiat_checkbox"></label>
+        <span class="tooltiptext">Expands and collapses the "Where I am at" section.</span>
     </div>
+    <h1 class="section_title">Where I am at</h1>
+    <br>
+    <div id="wiat_section" class="wiat">
+        <!-- Neighborhood information-->
+        <div id="neighborhood_option" class="subsection_option">
+            <form id="neighborhood">
+                <h3 class="subsection_title">My neighborhood is...</h3>
+                <div class="radio_option">
+                    <input id="urban" name="neighborhood" type="radio" value="URBAN">
+                    <label for="urban">Urban</label>
+                </div>
+                <div class="radio_option">
+                    <input id="rural" name="neighborhood" type="radio" value="RURAL">
+                    <label for="rural">Rural</label>
+                </div>
+                <div class="radio_option">
+                    <input id="suburban" name="neighborhood" type="radio" value="SUBURBAN">
+                    <label for="suburban">Suburban</label>
+                </div>
+                <div class="radio_option">
+                    <input id="neighborhood_other" name="neighborhood" type="radio" value="OTHER_NEIGHBORHOOD">
+                    <label for="neighborhood_other">Other</label>
+                </div>
+            </form>
+        </div>
 
-    <!-- Living situation information-->>
-    <div id="living_option" class="subsection_option">
-        <form id="neighborhood">
-            <h3 class="subsection_title">For my living situation, I...</h3>
-            <div class="radio_option">
-                <input id="rent" name="living_situation" type="radio" value="RENT">
-                <label for="rent">Rent an apartment</label>
-            </div>
-            <div class="radio_option">
-                <input id="yard_home" name="living_situation" type="radio" value="YARD_HOME">
-                <label for="yard_home">Own a home with a yard</label>
-            </div>
-            <div class="radio_option">
-                <input id="home" name="living_situation" type="radio" value="HOME">
-                <label for="home">Own a home without a yard</label>
-            </div>
-            <div class="radio_option">
-                <input id="neighborhood_other" name="living_situation" type="radio" value="OTHER_NEIGHBORHOOD">
-                <label for="neighborhood_other">Other</label>
-            </div>
-        </form>
+        <!-- Living situation information-->
+        <div id="living_option" class="subsection_option">
+            <form id="living">
+                <h3 class="subsection_title">For my living situation, I...</h3>
+                <div class="radio_option">
+                    <input id="rent" name="living_situation" type="radio" value="RENT">
+                    <label for="rent">Rent an apartment</label>
+                </div>
+                <div class="radio_option">
+                    <input id="yard_home" name="living_situation" type="radio" value="YARD_HOME">
+                    <label for="yard_home">Own a home with a yard</label>
+                </div>
+                <div class="radio_option">
+                    <input id="home" name="living_situation" type="radio" value="HOME">
+                    <label for="home">Own a home without a yard</label>
+                </div>
+                <div class="radio_option">
+                    <input id="condo" name="living_situation" type="radio" value="CONDO">
+                    <label for="condo">Own a condo</label>
+                </div>
+                <div class="radio_option">
+                    <input id="on_campus" name="living_situation" type="radio" value="ON_CAMPUS">
+                    <label for="on_campus">Live on campus</label>
+                </div>
+                <div class="radio_option">
+                    <input id="live_family" name="living_situation" type="radio" value="LIVE_FAMILY">
+                    <label for="live_family">Live with family</label>
+                </div>
+            </form>
+        </div>
+
+        <!-- Food information-->
+        <div id="food_option" class="subsection_option">
+            <form id="food">
+                <h3 class="subsection_title">For food, I mostly...</h3>
+                <div class="radio_option">
+                    <input id="garden_food" name="food" type="radio" value="GARDEN_FOOD">
+                    <label for="garden_food">Eat from my own garden or farm</label>
+                </div>
+                <div class="radio_option">
+                    <input id="local_food" name="food" type="radio" value="LOCAL_FOOD">
+                    <label for="local_food">Buy food grown and raised locally</label>
+                </div>
+                <div class="radio_option">
+                    <input id="organic_food" name="food" type="radio" value="ORGANIC_FOOD">
+                    <label for="organic_food">Buy organic food</label>
+                </div>
+                <div class="radio_option">
+                    <input id="standard_food" name="food" type="radio" value="STANDARD_FOOD">
+                    <label for="standard_food">Use a standard grocery store</label>
+                </div>
+            </form>
+        </div>
     </div>
-
     <!-- All motivations, challenges, and opportunities are found below-->
     <!-- Health Impact -->
     <div class="subsection_option">
@@ -811,8 +854,7 @@
 
     }
 
-    /* When the user clicks on the button,
-    toggle between hiding and showing the specific item */
+    /* toggles between hiding and showing the element `drop_down` */
     function toggleDropDown(drop_down) {
         document.getElementById(drop_down).classList.toggle("show");
     }
