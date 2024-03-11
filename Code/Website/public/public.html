@@ -16,12 +16,14 @@
     :root {
         --g: 1px; /*the gap in the thumb*/
         --l: 10px; /*line thickness*/
+        --pl: 10px; /*Indent (padding) added to the left side of options in dropdown*/
         --ts: 20px; /*thumb size*/
         --w: 400px; /*width of the slider*/
         --h: 30px; /*slider height*/
         --bw: 425px; /*container width for adv search options*/
         --bc: #243844; /*Background color in dropdown*/
         --tc: white; /*Color of text in dialoge boxes*/
+        --b: 10px; /*how thick the outline of the dropdown box is*/
     }
     
     body {
@@ -99,7 +101,7 @@
     .tooltip {
         position: relative;
         display: inline-block;
-        border-bottom: 1px solid black; /* If you want dots under the hoverable text */
+        border-bottom: 1px solid black;
     }
 
     /* Tooltip text */
@@ -124,7 +126,11 @@
         visibility: visible;
     }
 
+    .radio_option {
+        display: block;
+    }
 
+    /*Below is all CSS related to motivation, barrier, and opportunity sliders*/
     .barrier_slider {
         --tc: #B85555; /*thumb color*/
         --bc: #493232; /*#B85555; /*background color*/
@@ -356,8 +362,7 @@
         margin-top: 0px;
     }
 
-    .adv_search {
-        --b: 10px;
+    .adv_search { 
         display: none; /*for making adv_search a dropdown by default*/
         background-color: var(--bc);
         box-shadow: 0px 0px 0px var(--b) #3B6AB3;
@@ -369,7 +374,6 @@
     }
 
     .adv_search_embeded_dropdown {
-        --b: 10px;
         display: none;
         background-color: var(--bc);
         color: var(--tc);
@@ -380,12 +384,12 @@
 
     .show { display: block; }
 
-    .adv_search_option {
+    .subsection_option {
         padding-bottom: 60px;
-        padding-left: 10px;
+        padding-left: var(--b);
     }
 
-    .adv_search_title {
+    .subsection_title {
         width: var(--w);
         margin: 0px;
         text-align: center;
@@ -433,20 +437,66 @@
 
 <h1>Hello world!</h1>
 
-<input id="check_1" type="checkbox" class="css-checkbox" checked>
-<label for="check_1"></label>
-
 <button onclick="toggleDropDown('adv_search_dropdown')" class="drop_button">Personalization Tool</button>
 <div id="adv_search_dropdown" class="adv_search">
 
+    <!--Where I am at section -->
+    <!-- Neighborhood information-->>
+    <h1>Where I am at</h1>
+    <div id="neighborhood_option" class="subsection_option">
+        <form id="neighborhood">
+            <h3 class="subsection_title">My neighborhood is...</h3>
+            <div class="radio_option">
+                <input id="urban" name="neighborhood" type="radio" value="URBAN">
+                <label for="urban">Urban</label>
+            </div>
+            <div class="radio_option">
+                <input id="rural" name="neighborhood" type="radio" value="RURAL">
+                <label for="rural">Rural</label>
+            </div>
+            <div class="radio_option">
+                <input id="suburban" name="neighborhood" type="radio" value="SUBURBAN">
+                <label for="suburban">Suburban</label>
+            </div>
+            <div class="radio_option">
+                <input id="neighborhood_other" name="neighborhood" type="radio" value="OTHER_NEIGHBORHOOD">
+                <label for="neighborhood_other">Other</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- Living situation information-->>
+    <div id="living_option" class="subsection_option">
+        <form id="neighborhood">
+            <h3 class="subsection_title">For my living situation, I...</h3>
+            <div class="radio_option">
+                <input id="rent" name="living_situation" type="radio" value="RENT">
+                <label for="rent">Rent an apartment</label>
+            </div>
+            <div class="radio_option">
+                <input id="yard_home" name="living_situation" type="radio" value="YARD_HOME">
+                <label for="yard_home">Own a home with a yard</label>
+            </div>
+            <div class="radio_option">
+                <input id="home" name="living_situation" type="radio" value="HOME">
+                <label for="home">Own a home without a yard</label>
+            </div>
+            <div class="radio_option">
+                <input id="neighborhood_other" name="living_situation" type="radio" value="OTHER_NEIGHBORHOOD">
+                <label for="neighborhood_other">Other</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- All motivations, challenges, and opportunities are found below-->
     <!-- Health Impact -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="hi_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="hi_checkbox"></label>
             <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
         </div>
-        <h3 id="hi_title" class="adv_search_title">Health Impact
+        <h3 id="hi_title" class="subsection_title">Health Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
             </div>
@@ -462,13 +512,13 @@
     </div>
 
     <!-- Lineage Impact -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="li_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="li_checkbox"></label>
             <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
         </div>
-        <h3 id="li_title" class="adv_search_title">Lineage Impact
+        <h3 id="li_title" class="subsection_title">Lineage Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
             </div>
@@ -485,13 +535,13 @@
     </div>
 
     <!-- Carbon Impact -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="ci_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="ci_checkbox"></label>
             <span class="tooltiptext">Toggles if "Carbon Impact" is factored into your search.</span>
         </div>
-        <h3 id="ci_title" class="adv_search_title">Carbon Impact
+        <h3 id="ci_title" class="subsection_title">Carbon Impact
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">Where you want your action to have the most impact on carbon outputs.</span>
             </div>
@@ -510,13 +560,13 @@
     </div>
 
     <!-- Environmental Justice -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="ej_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="ej_checkbox"></label>
             <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
         </div>
-        <h3 id="ej_title" class="adv_search_title">Enviornmental Justice
+        <h3 id="ej_title" class="subsection_title">Enviornmental Justice
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
             </div>
@@ -534,13 +584,13 @@
     </div>
 
     <!-- Action Ease -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="e_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="e_checkbox"></label>
             <span class="tooltiptext">Toggles if "Ease" is factored into your search.</span>
         </div>
-        <h3 id="e_title" class="adv_search_title">Ease
+        <h3 id="e_title" class="subsection_title">Ease (Time Commitment)
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">The ease of the action, in regards to how much time it demands. A more difficult action demands more time.</span>
             </div>
@@ -558,13 +608,13 @@
     </div>
 
     <!-- Action Financing -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="af_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="af_checkbox"></label>
             <span class="tooltiptext">Toggles if "Financing" is factored into your search.</span>
         </div>
-        <h3 id="af_title" class="adv_search_title">Financing
+        <h3 id="af_title" class="subsection_title">Financing
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">How much money you would like to spend (or receive) from an action.</span>
             </div>
@@ -580,13 +630,13 @@
     </div>
 
     <!-- Sociality -->
-    <div class="adv_search_option">
+    <div class="subsection_option">
         <div class="tooltip">
             <input id="s_checkbox" type="checkbox" class="css-checkbox" checked>
             <label for="s_checkbox"></label>
             <span class="tooltiptext">Toggles if "Sociality" is factored into your search.</span>
         </div>
-        <h3 id="s_title" class="adv_search_title">Sociality
+        <h3 id="s_title" class="subsection_title">Sociality
             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                 <span class="tooltiptext">How social would you like your action to be?</span>
             </div>
@@ -607,13 +657,13 @@
     <i onclick="toggleDropDown('adv_search_embeded_dropdown')" class="fa fa-chevron-down adv_search_drop_chevron" aria-hidden="true"></i>
     <div id="adv_search_embeded_dropdown" class="adv_search_embeded_dropdown">
         <!-- Action Range -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="ar_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="ar_checkbox"></label>
                 <span class="tooltiptext">Toggles if Range is factored into your search.</span>
             </div>
-            <h3 id="ar_title" class="adv_search_title">Range
+            <h3 id="ar_title" class="subsection_title">Range
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How far you would like your action's effects to be felt.</span>
                 </div>
@@ -631,13 +681,13 @@
         </div>
 
         <!-- Action Location -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="al_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="al_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Location" is factored into your search.</span>
             </div>
-            <h3 id="al_title" class="adv_search_title">Location
+            <h3 id="al_title" class="subsection_title">Location
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
                 </div>
@@ -655,13 +705,13 @@
         </div>
 
         <!-- Action Skills -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="as_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="as_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Skills" is factored into your search.</span>
             </div>
-            <h3 id="as_title" class="adv_search_title">Skills
+            <h3 id="as_title" class="subsection_title">Skills
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
                 </div>
@@ -677,13 +727,13 @@
         </div>
 
         <!-- Social Acceptability -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="sa_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="sa_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Social Acceptability" is factored into your search.</span>
             </div>
-            <h3 id="sa_title" class="adv_search_title">Social Acceptability
+            <h3 id="sa_title" class="subsection_title">Social Acceptability
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How socially acceptable an action is considered by society.</span>
                 </div>
@@ -699,13 +749,13 @@
         </div>
         
         <!-- Action Impact -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="ai_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="ai_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Impact" is factored into your search.</span>
             </div>
-            <h3 id="ai_title" class="adv_search_title">Wildlife Impact
+            <h3 id="ai_title" class="subsection_title">Wildlife Impact
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How much impact, in regards to biodiversity and wildlife, would you like your action to have?</span>
                 </div>
@@ -721,13 +771,13 @@
         </div>
 
         <!-- Noticability -->
-        <div class="adv_search_option">
+        <div class="subsection_option">
             <div class="tooltip">
                 <input id="n_checkbox" type="checkbox" class="css-checkbox" checked>
                 <label for="n_checkbox"></label>
                 <span class="tooltiptext">Toggles if "Noticability" is factored into your search.</span>
             </div>
-            <h3 id="n_title" class="adv_search_title">Noticability
+            <h3 id="n_title" class="subsection_title">Noticability
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                     <span class="tooltiptext">How noticable would you like your action to be?</span>
                 </div>
