@@ -391,7 +391,7 @@
 
     .subsection_option {
         padding-bottom: 60px;
-        padding-left: var(--b);
+        padding-left: var(--pl);
     }
 
     .subsection_title {
@@ -436,22 +436,27 @@
         font-size: large;
     }
 
+    .block {
+        display: block
+    }
 </style>
 
 
 
 <h1>Hello world!</h1>
 
-<button onclick="toggleDropDown('adv_search_dropdown')" class="drop_button">Personalization Tool</button>
+<button onclick="toggleDropDown('adv_search_dropdown', null)" class="drop_button">Personalization Tool</button>
 <div id="adv_search_dropdown" class="adv_search">
 
     <!--Where I am at section -->
-    <div class="tooltip">
-        <input id="wiat_checkbox" type="checkbox" class="css-checkbox" checked>
-        <label for="wiat_checkbox"></label>
-        <span class="tooltiptext">Expands and collapses the "Where I am at" section.</span>
+    <div class="section_title bold_tick">
+        <h1 class="section_title">Where I am at</h1>
+        <div class="tooltip">
+            <input id="wiat_checkbox" type="checkbox" class="css-checkbox" checked>
+            <label for="wiat_checkbox"></label>
+            <span class="tooltiptext">Expands and collapses the "Where I am at" section.</span>
+        </div>
     </div>
-    <h1 class="section_title">Where I am at</h1>
     <br>
     <div id="wiat_section" class="wiat">
         <!-- Neighborhood information-->
@@ -697,7 +702,7 @@
 
 
     <!-- Additional Dropdown Options -->
-    <i onclick="toggleDropDown('adv_search_embeded_dropdown')" class="fa fa-chevron-down adv_search_drop_chevron" aria-hidden="true"></i>
+    <i id="expand_personalization_chevron" onclick="toggleDropDown('adv_search_embeded_dropdown', 'expand_personalization_chevron')" class="fa fa-chevron-down adv_search_drop_chevron" aria-hidden="true"></i>
     <div id="adv_search_embeded_dropdown" class="adv_search_embeded_dropdown">
         <!-- Action Range -->
         <div class="subsection_option">
@@ -855,8 +860,15 @@
     }
 
     /* toggles between hiding and showing the element `drop_down` */
-    function toggleDropDown(drop_down) {
+    function toggleDropDown(drop_down, c) {
+        //opens and closes the dropdown
         document.getElementById(drop_down).classList.toggle("show");
+        
+        //toggles the chevron `c` between pointing up and pointing down
+        if(c != null) {
+            document.getElementById(c).classList.toggle("fa-chevron-down")
+            document.getElementById(c).classList.toggle("fa-chevron-up")
+        }
     }
 
     //Function for Location-based sliders
