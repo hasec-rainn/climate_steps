@@ -95,7 +95,6 @@
     .tooltip {
         position: relative;
         display: inline-block;
-        border-bottom: 1px solid black;
     }
 
     /* Tooltip text */
@@ -449,11 +448,10 @@
 <div id="adv_search_dropdown" class="adv_search">
 
     <!--Where I am at section -->
-    <div class="section_title bold_tick">
+    <div class="section_title">
         <h1 class="section_title">Where I am at</h1>
         <div class="tooltip">
-            <input id="wiat_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="wiat_checkbox"></label>
+            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
             <span class="tooltiptext">Expands and collapses the "Where I am at" section.</span>
         </div>
     </div>
