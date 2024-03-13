@@ -447,7 +447,7 @@
 <button onclick="toggleDropDown('adv_search_dropdown', null)" class="drop_button">Personalization Tool</button>
 <div id="adv_search_dropdown" class="adv_search">
 
-    <!--Where I am at section -->
+    <!--Where I am at section-->
     <div class="section_title">
         <h1 class="section_title">Where I am at</h1>
         <div class="tooltip">
@@ -631,189 +631,58 @@
         </div>
 
     </div>
-    <!-- All motivations, challenges, and opportunities are found below-->
-    <!-- Health Impact -->
-    <div class="subsection_option">
+
+
+    <!-- Motivations section-->
+    <div class="section_title">
+        <h1 class="section_title">Motivations</h1>
         <div class="tooltip">
-            <input id="hi_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="hi_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
-        </div>
-        <h3 id="hi_title" class="subsection_title">Health Impact
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
-            </div>
-        </h3>
-        <div id="hi_slider_composite" class="">
-            <input id="health_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="hi_list">
-                <option value="0" label="My Health"></option>
-                <option value="50" label="My Family's Health"></option>
-                <option value="100" label="Global Health"></option>
-            </datalist>
+            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <span class="tooltiptext">Expands and collapses the "Motivations" section.</span>
         </div>
     </div>
-
-    <!-- Lineage Impact -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="li_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="li_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
-        </div>
-        <h3 id="li_title" class="subsection_title">Lineage Impact
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
-            </div>
-        </h3>
-        <div id="li_slider_composite">
-            <input id="lineage_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="li_list">
-                <option value="0" label="Just Me"></option>
-                <option value="33" label="Children"></option>
-                <option value="66" label="Grandchildren"></option>
-                <option value="100" label="All Future Generations"></option>
-            </datalist>
-        </div>
-    </div>
-
-    <!-- Carbon Impact -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="ci_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="ci_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Carbon Impact" is factored into your search.</span>
-        </div>
-        <h3 id="ci_title" class="subsection_title">Carbon Impact
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">Where you want your action to have the most impact on carbon outputs.</span>
-            </div>
-        </h3>
-        <div id="ci_slider_composite">
-            <input id="carbon_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ci_list">
-                <option value="0" label="Local"></option>
-                <option value="25" label="Town/City"></option>
-                <option value="50" label="State"></option>
-                <option value="75" label="National"></option>
-                <option value="100" label="Global"></option>
-            </datalist>
-        </div>
-        
-    </div>
-
-    <!-- Environmental Justice -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="ej_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="ej_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
-        </div>
-        <h3 id="ej_title" class="subsection_title">Enviornmental Justice
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
-            </div>
-        </h3>
-        <div id="ej_slider_composite">
-            <input id="enviornmental_justice" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="ej_list">
-                <option value="0" label="Local"></option>
-                <option value="25" label="Town/City"></option>
-                <option value="50" label="State"></option>
-                <option value="75" label="National"></option>
-                <option value="100" label="Global"></option>
-            </datalist>
-        </div>
-    </div>
-
-    <!-- Action Ease -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="e_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="e_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Ease" is factored into your search.</span>
-        </div>
-        <h3 id="e_title" class="subsection_title">Ease (Time Commitment)
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">The ease of the action, in regards to how much time it demands. A more difficult action demands more time.</span>
-            </div>
-        </h3>
-        <div id="e_slider_composite">
-            <input id="ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="e_list">
-                <option value="0" label="Very Easy"></option>
-                <option value="25" label="Easy"></option>
-                <option value="50" label="Average"></option>
-                <option value="75" label="Hard"></option>
-                <option value="100" label="Very Hard"></option>
-            </datalist>
-        </div>
-    </div>
-
-    <!-- Action Financing -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="af_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="af_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Financing" is factored into your search.</span>
-        </div>
-        <h3 id="af_title" class="subsection_title">Financing
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">How much money you would like to spend (or receive) from an action.</span>
-            </div>
-        </h3>
-        <div id="af_slider_composite">
-            <input id="action_financing" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-            <datalist id="af_list">
-                <option value="0" label="Money Back"></option>
-                <option value="50" label="Low Cost"></option>
-                <option value="100" label="High Cost"></option>
-            </datalist>
-        </div>
-    </div>
-
-    <!-- Sociality -->
-    <div class="subsection_option">
-        <div class="tooltip">
-            <input id="s_checkbox" type="checkbox" class="css-checkbox" checked>
-            <label for="s_checkbox"></label>
-            <span class="tooltiptext">Toggles if "Sociality" is factored into your search.</span>
-        </div>
-        <h3 id="s_title" class="subsection_title">Sociality
-            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                <span class="tooltiptext">How social would you like your action to be?</span>
-            </div>
-        </h3>
-        <div id="s_slider_composite">
-            <input id="action_sociality" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-            <datalist id="s_list">
-                <option value="0" label="Private"></option>
-                <option value="50" label="Within my network"></option>
-                <option value="100" label="Meet new people"></option>
-            </datalist>
-        </div>
-    </div>
-
-
-
-    <!-- Additional Dropdown Options -->
-    <i id="expand_personalization_chevron" onclick="toggleDropDown('adv_search_embeded_dropdown', 'expand_personalization_chevron')" class="fa fa-chevron-down adv_search_drop_chevron" aria-hidden="true"></i>
-    <div id="adv_search_embeded_dropdown" class="adv_search_embeded_dropdown">
-        <!-- Action Range -->
+    <br>
+    <div id="motivators">
+        <!-- Impact Scale (previously called "Carbon Impact") -->
         <div class="subsection_option">
             <div class="tooltip">
-                <input id="ar_checkbox" type="checkbox" class="css-checkbox" checked>
-                <label for="ar_checkbox"></label>
-                <span class="tooltiptext">Toggles if Range is factored into your search.</span>
+                <input id="ci_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="ci_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Impact Scale" is factored into your search.</span>
             </div>
-            <h3 id="ar_title" class="subsection_title">Range
+            <h3 id="ci_title" class="subsection_title">Impact Scale
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="tooltiptext">How far you would like your action's effects to be felt.</span>
+                    <span class="tooltiptext">The scale at which you want to impact emissions.</span>
                 </div>
             </h3>
-            <div id="ar_slider_composite">
-                <input id="action_range" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-                <datalist id="ar_list">
+            <div id="ci_slider_composite">
+                <input id="carbon_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
+                <datalist id="ci_list">
+                    <option value="0" label="Local"></option>
+                    <option value="25" label="Town/City"></option>
+                    <option value="50" label="State"></option>
+                    <option value="75" label="National"></option>
+                    <option value="100" label="Global"></option>
+                </datalist>
+            </div>
+            
+        </div>
+
+        <!-- Environmental Justice -->
+        <div class="subsection_option">
+            <div class="tooltip">
+                <input id="ej_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="ej_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
+            </div>
+            <h3 id="ej_title" class="subsection_title">Enviornmental Justice
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
+                </div>
+            </h3>
+            <div id="ej_slider_composite">
+                <input id="enviornmental_justice" type="range" min="0" step="1" max="100" class="motivator_slider"/>
+                <datalist id="ej_list">
                     <option value="0" label="Local"></option>
                     <option value="25" label="Town/City"></option>
                     <option value="50" label="State"></option>
@@ -823,48 +692,104 @@
             </div>
         </div>
 
-        <!-- Action Location -->
+        <!-- Health Impact -->
         <div class="subsection_option">
             <div class="tooltip">
-                <input id="al_checkbox" type="checkbox" class="css-checkbox" checked>
-                <label for="al_checkbox"></label>
-                <span class="tooltiptext">Toggles if "Location" is factored into your search.</span>
+                <input id="hi_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="hi_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
             </div>
-            <h3 id="al_title" class="subsection_title">Location
+            <h3 id="hi_title" class="subsection_title">Health Impact
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
+                    <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
                 </div>
             </h3>
-            <div id="al_slider_composite">
-            <input id="action_location" type="range" min="0" step="1" max="100" class="motivator_slider"/>
-            <datalist id="al_list">
-                <option value="0" label="Local"></option>
-                <option value="25" label="Town/City"></option>
-                <option value="50" label="State"></option>
-                <option value="75" label="National"></option>
-                <option value="100" label="Global"></option>
-            </datalist>
+            <div id="hi_slider_composite" class="">
+                <input id="health_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
+                <datalist id="hi_list">
+                    <option value="0" label="My Health"></option>
+                    <option value="50" label="My Family's Health"></option>
+                    <option value="100" label="Global Health"></option>
+                </datalist>
             </div>
         </div>
 
-        <!-- Action Skills -->
+        <!-- Lineage Impact -->
         <div class="subsection_option">
             <div class="tooltip">
-                <input id="as_checkbox" type="checkbox" class="css-checkbox" checked>
-                <label for="as_checkbox"></label>
-                <span class="tooltiptext">Toggles if "Skills" is factored into your search.</span>
+                <input id="li_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="li_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
             </div>
-            <h3 id="as_title" class="subsection_title">Skills
+            <h3 id="li_title" class="subsection_title">Lineage Impact
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
+                    <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
                 </div>
             </h3>
-            <div id="as_slider_composite">
-                <input id="skills" type="range" min="0" step="1" max="100" class="barrier_slider"/>
-                <datalist id="as_list">
-                    <option value="0" label="No Skills"></option>
-                    <option value="50" label="Uses Current Skills"></option>
-                    <option value="100" label="Grows Skills"></option>
+            <div id="li_slider_composite">
+                <input id="lineage_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
+                <datalist id="li_list">
+                    <option value="0" label="Just Me"></option>
+                    <option value="33" label="Children"></option>
+                    <option value="66" label="Grandchildren"></option>
+                    <option value="100" label="All Future Generations"></option>
+                </datalist>
+            </div>
+        </div>
+    </div>
+
+    <!-- Challenges section-->
+    <div class="section_title">
+        <h1 class="section_title">Challenges</h1>
+        <div class="tooltip">
+            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <span class="tooltiptext">Expands and collapses the "Challenges" section.</span>
+        </div>
+    </div>
+    <br>
+    <div id="challenges">
+        <!-- Action Ease -->
+        <div class="subsection_option">
+            <div class="tooltip">
+                <input id="e_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="e_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Ease" is factored into your search.</span>
+            </div>
+            <h3 id="e_title" class="subsection_title">Ease (Time Commitment)
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span class="tooltiptext">The ease of the action, in regards to how much time it demands. A more difficult action demands more time.</span>
+                </div>
+            </h3>
+            <div id="e_slider_composite">
+                <input id="ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
+                <datalist id="e_list">
+                    <option value="0" label="Quick"></option>
+                    <option value="33" label="Low"></option>
+                    <option value="66" label="Medium"></option>
+                    <option value="100" label="Long"></option>
+                </datalist>
+            </div>
+        </div>
+        
+        <!-- Action Financing -->
+        <div class="subsection_option">
+            <div class="tooltip">
+                <input id="af_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="af_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Financing" is factored into your search.</span>
+            </div>
+            <h3 id="af_title" class="subsection_title">Financing
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span class="tooltiptext">How much money you would like to spend (or receive) from an action.</span>
+                </div>
+            </h3>
+            <div id="af_slider_composite">
+                <input id="action_financing" type="range" min="0" step="1" max="100" class="barrier_slider"/>
+                <datalist id="af_list">
+                    <option value="0" label="Money Back"></option>
+                    <option value="33" label="No Cost"></option>
+                    <option value="66" label="Low Cost (<$100)"></option>
+                    <option value="100" label="High Cost"></option>
                 </datalist>
             </div>
         </div>
@@ -884,54 +809,113 @@
             <div id="sa_slider_composite">
                 <input id="social_acceptability" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                 <datalist id="sa_list">
-                    <option value="0" label="Accepted"></option>
-                    <option value="50" label="Neutral"></option>
+                    <option value="0" label="Private"></option>
+                    <option value="25" label="Accepted"></option>
+                    <option value="75" label="Neutral"></option>
                     <option value="100" label="Challenged"></option>
                 </datalist>
             </div>
         </div>
-        
-        <!-- Action Impact -->
+
+        <!-- Action Location -->
         <div class="subsection_option">
             <div class="tooltip">
-                <input id="ai_checkbox" type="checkbox" class="css-checkbox" checked>
-                <label for="ai_checkbox"></label>
-                <span class="tooltiptext">Toggles if "Impact" is factored into your search.</span>
+                <input id="al_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="al_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Location" is factored into your search.</span>
             </div>
-            <h3 id="ai_title" class="subsection_title">Wildlife Impact
+            <h3 id="al_title" class="subsection_title">Location
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="tooltiptext">How much impact, in regards to biodiversity and wildlife, would you like your action to have?</span>
+                    <span class="tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
                 </div>
             </h3>
-            <div id="ai_slider_composite">
-                <input id="action_impact" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="ai_list">
-                    <option value="0" label="Small"></option>
+            <div id="al_slider_composite">
+            <input id="action_location" type="range" min="0" step="1" max="100" class="barrier_slider"/>
+            <datalist id="al_list">
+                <option value="0" label="Local"></option>
+                <option value="25" label="Town/City"></option>
+                <option value="50" label="State"></option>
+                <option value="75" label="National"></option>
+                <option value="100" label="Global"></option>
+            </datalist>
+            </div>
+        </div>
+
+        <!-- Action Ease (Mental) -->
+        <div class="subsection_option">
+            <div class="tooltip">
+                <input id="me_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="me_checkbox"></label>
+                <span class="tooltiptext">Toggles if Action Ease (Mental) is factored into your search.</span>
+            </div>
+            <h3 id="me_title" class="subsection_title">Action Ease (Mental)
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span class="tooltiptext">How challenging would you like your actions to be?</span>
+                </div>
+            </h3>
+            <div id="me_slider_composite">
+                <input id="mental_ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
+                <datalist id="ar_list">
+                    <option value="0" label="Very Easy"></option>
+                    <option value="25" label="Easy"></option>
                     <option value="50" label="Medium"></option>
-                    <option value="100" label="Large"></option>
+                    <option value="75" label="Hard"></option>
+                    <option value="100" label="Very Hard"></option>
+                </datalist>
+            </div>
+        </div>
+    </div>
+
+    <!-- Opportunities section-->
+    <div class="section_title">
+        <h1 class="section_title">Opportunities</h1>
+        <div class="tooltip">
+            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <span class="tooltiptext">Expands and collapses the "Challenges" section.</span>
+        </div>
+    </div>
+    <br>
+    <div id="opportunities">
+        <!-- Sociality -->
+        <div class="subsection_option">
+            <div class="tooltip">
+                <input id="s_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="s_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Sociality" is factored into your search.</span>
+            </div>
+            <h3 id="s_title" class="subsection_title">Sociality
+                <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <span class="tooltiptext">How social would you like your action to be?</span>
+                </div>
+            </h3>
+            <div id="s_slider_composite">
+                <input id="action_sociality" type="range" min="0" step="1" max="100" class="logistic_slider"/>
+                <datalist id="s_list">
+                    <option value="0" label="Private"></option>
+                    <option value="50" label="Within my network"></option>
+                    <option value="100" label="Meet new people"></option>
                 </datalist>
             </div>
         </div>
 
-        <!-- Noticability -->
+        <!-- Action Skills -->
         <div class="subsection_option">
             <div class="tooltip">
-                <input id="n_checkbox" type="checkbox" class="css-checkbox" checked>
-                <label for="n_checkbox"></label>
-                <span class="tooltiptext">Toggles if "Noticability" is factored into your search.</span>
+                <input id="as_checkbox" type="checkbox" class="css-checkbox" checked>
+                <label for="as_checkbox"></label>
+                <span class="tooltiptext">Toggles if "Skills" is factored into your search.</span>
             </div>
-            <h3 id="n_title" class="subsection_title">Noticability
+            <h3 id="as_title" class="subsection_title">Skills
                 <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                    <span class="tooltiptext">How noticable would you like your action to be?</span>
+                    <span class="tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
                 </div>
             </h3>
-            <div id="n_slider_composite">
-                <input id="noticability" type="range" min="0" step="1" max="100" class="logistic_slider"/>
-                <datalist id="n_list">
-                    <option value="0" label="Private"></option>
-                    <option value="25" label="Discrete"></option>
-                    <option value="50" label="Friends & Family"></option>
-                    <option value="100" label="Very Social"></option>
+            <div id="as_slider_composite">
+                <input id="skills" type="range" min="0" step="1" max="100" class="logistic_slider"/>
+                <datalist id="as_list">
+                    <option value="0" label="No Skills"></option>
+                    <option value="50" label="Uses Current Skills"></option>
+                    <option value="100" label="Grows Skills"></option>
                 </datalist>
             </div>
         </div>
@@ -1057,10 +1041,10 @@
 
 
     //Action Range
-    const action_range = document.querySelector("#action_range");
+    const mental_ease = document.querySelector("#mental_ease");
     const ar_list = document.getElementById("ar_list").options;
-    location_updater(action_range, ar_list);
-    toggleSlider("ar_checkbox", "ar_slider_composite", "ar_title");
+    location_updater(mental_ease, ar_list);
+    toggleSlider("me_checkbox", "me_slider_composite", "me_title");
 
 
 
@@ -1081,16 +1065,14 @@
             e_list[i].classList.remove("bold_tick");
         }
 
-        if (event.target.value < 13) {
+        if (event.target.value < 20) {
             e_list[0].classList.add("bold_tick");
-        } else if (event.target.value < 38) {
+        } else if (event.target.value < 50) {
             e_list[1].classList.add("bold_tick");
-        } else if (event.target.value < 63) {
+        } else if (event.target.value < 80) {
             e_list[2].classList.add("bold_tick");
-        } else if (event.target.value < 88) {
+        } else if (event.target.value < 100) {
             e_list[3].classList.add("bold_tick");
-        } else {
-            e_list[4].classList.add("bold_tick");
         }
     })
     toggleSlider("e_checkbox", "e_slider_composite", "e_title");
@@ -1127,12 +1109,14 @@
             sa_list[i].classList.remove("bold_tick");
         }        
         
-        if (event.target.value < 33) {
+        if (event.target.value < 20) {
             sa_list[0].classList.add("bold_tick");
-        } else if (event.target.value < 66) {
+        } else if (event.target.value < 50) {
             sa_list[1].classList.add("bold_tick");
-        } else {
+        } else if (event.target.value < 80) {
             sa_list[2].classList.add("bold_tick");
+        } else {
+            sa_list[3].classList.add("bold_tick");
         }
     })
     toggleSlider("sa_checkbox", "sa_slider_composite", "sa_title");
@@ -1148,12 +1132,14 @@
             af_list[i].classList.remove("bold_tick");
         }        
         
-        if (event.target.value < 33) {
+        if (event.target.value < 20) {
             af_list[0].classList.add("bold_tick");
-        } else if (event.target.value < 66) {
+        } else if (event.target.value < 50) {
             af_list[1].classList.add("bold_tick");
-        } else {
+        } else if (event.target.value < 80) {
             af_list[2].classList.add("bold_tick");
+        } else {
+            af_list[3].classList.add("bold_tick");
         }
     })
     toggleSlider("af_checkbox", "af_slider_composite", "af_title");
