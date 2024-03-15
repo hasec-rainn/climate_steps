@@ -119,8 +119,13 @@
         visibility: visible;
     }
 
-    .wiat {
+    /*Hides sections so that they can be opened with dropdown functions*/
+    .section {
         display: none;
+    }
+
+    .section.show {
+        background-color: #384424;
     }
 
     .radio_option {
@@ -399,6 +404,7 @@
         text-align: center;
     }
 
+
     .adv_search_drop_chevron {
         width: var(--w);
         margin: 0px;
@@ -406,6 +412,13 @@
         font-size: 35px;
         padding-bottom: 30px;
         color: var(--tc);
+        cursor: pointer;
+    }
+
+    /*Not actually a chevron: this is used to make the "More options" at the bottom
+    of each section clickable*/
+    .adv_search_drop_chevron.small_font {
+        font-size: 22px;
     }
 
     .adv_search_drop_chevron:hover {
@@ -420,7 +433,7 @@
 
     /*Used with the checkbox to toggle if search options are to be
     used in a user's search*/
-    .disabled_slider {
+    .disabled_element {
         display: none;
     }
 
@@ -456,7 +469,7 @@
         </div>
     </div>
     <br>
-    <div id="wiat_section" class="wiat">
+    <div id="wiat_section" class="section">
         <!-- Neighborhood information-->
         <div id="neighborhood_option" class="subsection_option">
             <form id="neighborhood">
@@ -534,115 +547,121 @@
             </form>
         </div>
 
-        <!-- Eating habits information-->
-        <div id="eat_habits_option" class="subsection_option">
-            <form id="eat_habits">
-                <h3 class="subsection_title">For my diet, I would call myself...</h3>
-                <div class="radio_option">
-                    <input id="habit_vege" name="eat_habits" type="radio" value="HABIT_VEGE">
-                    <label for="habit_vege">Vegetarian</label>
-                </div>
-                <div class="radio_option">
-                    <input id="habit_vegan" name="eat_habits" type="radio" value="HABIT_VEGAN">
-                    <label for="habit_vegan">Vegan</label>
-                </div>
-                <div class="radio_option">
-                    <input id="habit_flexible" name="eat_habits" type="radio" value="HABIT_FLEXIBLE">
-                    <label for="habit_flexible">Flexible</label>
-                </div>
-                <div class="radio_option">
-                    <input id="habit_other" name="eat_habits" type="radio" value="HABIT_OTHER">
-                    <label for="habit_other">Other</label>
-                </div>
-            </form>
-        </div>
+        <!-- Displays additional questions for "Where I am at" section-->
+        <h2 class="small_font adv_search_drop_chevron" onclick="toggleDropDown('aq_wiat','null')">Additional Questions</h2>
+        <div id="aq_wiat" class="section">
+            <!-- Eating habits information-->
+            <div id="eat_habits_option" class="subsection_option">
+                <form id="eat_habits">
+                    <h3 class="subsection_title">For my diet, I would call myself...</h3>
+                    <div class="radio_option">
+                        <input id="habit_vege" name="eat_habits" type="radio" value="HABIT_VEGE">
+                        <label for="habit_vege">Vegetarian</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="habit_vegan" name="eat_habits" type="radio" value="HABIT_VEGAN">
+                        <label for="habit_vegan">Vegan</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="habit_flexible" name="eat_habits" type="radio" value="HABIT_FLEXIBLE">
+                        <label for="habit_flexible">Flexible</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="habit_other" name="eat_habits" type="radio" value="HABIT_OTHER">
+                        <label for="habit_other">Other</label>
+                    </div>
+                </form>
+            </div>
 
-        <!-- Transportation information-->
-        <div id="transportation_option" class="subsection_option">
-            <form id="transportation">
-                <h3 class="subsection_title">For transportation, I primarily...</h3>
-                <div class="radio_option">
-                    <input id="trans_gas" name="transportation" type="radio" value="TRANS_GAS">
-                    <label for="trans_gas">Use a gas vehicle</label>
-                </div>
-                <div class="radio_option">
-                    <input id="trans_better" name="transportation" type="radio" value="TRANS_BETTER">
-                    <label for="trans_better">Use an electric vehicle, a train, or a bus</label>
-                </div>
-                <div class="radio_option">
-                    <input id="trans_best" name="transportation" type="radio" value="TRANS_BEST">
-                    <label for="trans_best">Bike or walk</label>
-                </div>
-            </form>
-        </div>
+            <!-- Transportation information-->
+            <div id="transportation_option" class="subsection_option">
+                <form id="transportation">
+                    <h3 class="subsection_title">For transportation, I primarily...</h3>
+                    <div class="radio_option">
+                        <input id="trans_gas" name="transportation" type="radio" value="TRANS_GAS">
+                        <label for="trans_gas">Use a gas vehicle</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="trans_better" name="transportation" type="radio" value="TRANS_BETTER">
+                        <label for="trans_better">Use an electric vehicle, a train, or a bus</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="trans_best" name="transportation" type="radio" value="TRANS_BEST">
+                        <label for="trans_best">Bike or walk</label>
+                    </div>
+                </form>
+            </div>
 
-        <!-- Travel habits information-->
-        <div id="travel_habits_option" class="subsection_option">
-            <form id="travel_habits">
-                <h3 class="subsection_title">Regarding traveling, I primarily...</h3>
-                <div class="radio_option">
-                    <input id="habit_domestic" name="travel_habits" type="radio" value="HABIT_DOMESTIC">
-                    <label for="habit_domestic">Travel domestically</label>
-                </div>
-                <div class="radio_option">
-                    <input id="habit_international" name="travel_habits" type="radio" value="HABIT_INTERNATIONAL">
-                    <label for="habit_international">Travel internationally</label>
-                </div>
-                <div class="radio_option">
-                    <input id="habit_no" name="travel_habits" type="radio" value="HABIT_NO">
-                    <label for="habit_no">do not travel</label>
-                </div>
-            </form>
-        </div>
+            <!-- Travel habits information-->
+            <div id="travel_habits_option" class="subsection_option">
+                <form id="travel_habits">
+                    <h3 class="subsection_title">Regarding traveling, I primarily...</h3>
+                    <div class="radio_option">
+                        <input id="habit_domestic" name="travel_habits" type="radio" value="HABIT_DOMESTIC">
+                        <label for="habit_domestic">Travel domestically</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="habit_international" name="travel_habits" type="radio" value="HABIT_INTERNATIONAL">
+                        <label for="habit_international">Travel internationally</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="habit_no" name="travel_habits" type="radio" value="HABIT_NO">
+                        <label for="habit_no">do not travel</label>
+                    </div>
+                </form>
+            </div>
 
-        <!-- Heating and Air -->
-        <div id="haa_option" class="subsection_option">
-            <form id="haa">
-                <h3 class="subsection_title">For heating, cooling, and air-conditioning, I have...</h3>
-                <div class="radio_option">
-                    <input id="haa_electric" name="haa" type="radio" value="HAA_ELECTRIC">
-                    <label for="haa_electric">Electric heating and air conditioning</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_gas" name="haa" type="radio" value="HAA_GAS">
-                    <label for="haa_gas">Gas heating and air conditioning</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_oil" name="haa" type="radio" value="HAA_OIL">
-                    <label for="haa_oil">Oil heating and air conditioning</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_wood" name="haa" type="radio" value="HAA_WOOD">
-                    <label for="haa_wood">Wood (or pellet) heating</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_mix" name="haa" type="radio" value="HAA_MIX">
-                    <label for="haa_oil">A mixture of the above options</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_none" name="haa" type="radio" value="HAA_NONE">
-                    <label for="haa_none">I have neither heating nor air conditioning</label>
-                </div>
-                <div class="radio_option">
-                    <input id="haa_other" name="haa" type="radio" value="HAA_OTHER">
-                    <label for="haa_other">Something else</label>
-                </div>
-            </form>
+            <!-- Heating and Air -->
+            <div id="haa_option" class="subsection_option">
+                <form id="haa">
+                    <h3 class="subsection_title">For heating, cooling, and air-conditioning, I have...</h3>
+                    <div class="radio_option">
+                        <input id="haa_electric" name="haa" type="radio" value="HAA_ELECTRIC">
+                        <label for="haa_electric">Electric heating and air conditioning</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_gas" name="haa" type="radio" value="HAA_GAS">
+                        <label for="haa_gas">Gas heating and air conditioning</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_oil" name="haa" type="radio" value="HAA_OIL">
+                        <label for="haa_oil">Oil heating and air conditioning</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_wood" name="haa" type="radio" value="HAA_WOOD">
+                        <label for="haa_wood">Wood (or pellet) heating</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_mix" name="haa" type="radio" value="HAA_MIX">
+                        <label for="haa_oil">A mixture of the above options</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_none" name="haa" type="radio" value="HAA_NONE">
+                        <label for="haa_none">I have neither heating nor air conditioning</label>
+                    </div>
+                    <div class="radio_option">
+                        <input id="haa_other" name="haa" type="radio" value="HAA_OTHER">
+                        <label for="haa_other">Something else</label>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </div>
-
+    
+    <br>
+    <br>
 
     <!-- Motivations section-->
     <div class="section_title">
         <h1 class="section_title">Motivations</h1>
         <div class="tooltip">
-            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <i id="motivators_chevron" onclick="toggleDropDown('motivators','motivators_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
             <span class="tooltiptext">Expands and collapses the "Motivations" section.</span>
         </div>
     </div>
     <br>
-    <div id="motivators">
+    <div id="motivators" class="section">
         <!-- Impact Scale (previously called "Carbon Impact") -->
         <div class="subsection_option">
             <div class="tooltip">
@@ -742,12 +761,12 @@
     <div class="section_title">
         <h1 class="section_title">Challenges</h1>
         <div class="tooltip">
-            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <i id="challenges_chevron" onclick="toggleDropDown('challenges','challenges_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
             <span class="tooltiptext">Expands and collapses the "Challenges" section.</span>
         </div>
     </div>
     <br>
-    <div id="challenges">
+    <div id="challenges" class="section">
         <!-- Action Ease -->
         <div class="subsection_option">
             <div class="tooltip">
@@ -870,12 +889,12 @@
     <div class="section_title">
         <h1 class="section_title">Opportunities</h1>
         <div class="tooltip">
-            <i id="wiat_chevron" onclick="toggleDropDown('wiat_section','wiat_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
-            <span class="tooltiptext">Expands and collapses the "Challenges" section.</span>
+            <i id="opportunities_chevron" onclick="toggleDropDown('opportunities','opportunities_chevron')" class="fa fa-chevron-down adv_search_drop_chevron"></i>
+            <span class="tooltiptext">Expands and collapses the "Opportunities" section.</span>
         </div>
     </div>
     <br>
-    <div id="opportunities">
+    <div id="opportunities" class="section">
         <!-- Sociality -->
         <div class="subsection_option">
             <div class="tooltip">
@@ -932,7 +951,7 @@
     and title_id is the title that will be greyed out*/
     function toggleSlider(checkbox, slider_id, title_id) {
         document.getElementById(checkbox).addEventListener("click", (event) => {
-                document.getElementById(slider_id).classList.toggle("disabled_slider")
+                document.getElementById(slider_id).classList.toggle("disabled_element")
                 document.getElementById(title_id).classList.toggle("disabled_title")
             });
 
