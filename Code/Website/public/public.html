@@ -770,6 +770,28 @@
                         </datalist>
                     </div>
                 </div>
+
+                <!-- Biodiversity Impact -->
+                <div class="subsection_option">
+                    <div class="tooltip">
+                        <input id="bi_checkbox" type="checkbox" class="css-checkbox" checked>
+                        <label for="bi_checkbox"></label>
+                        <span class="tooltiptext">Toggles if "Biodiversity Impact" is factored into your search.</span>
+                    </div>
+                    <h3 id="bi_title" class="subsection_title">Biodiversity Impact
+                        <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <span class="tooltiptext">The impact you want your action to have on biodiversity.</span>
+                        </div>
+                    </h3>
+                    <div id="bi_slider_composite">
+                        <input id="biodiversity_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
+                        <datalist id="bi_list">
+                            <option value="0" label="Nearby green spaces"></option>
+                            <option value="50" label="Ecosystem level"></option>
+                            <option value="100" label="Life on Earth"></option>
+                        </datalist>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="tooltip">
@@ -1076,6 +1098,28 @@
         }
     });
     toggleSlider("li_checkbox", "li_slider_composite","li_title");
+
+
+
+    //Lineage Impact
+    const biodiversity_impact = document.querySelector("#biodiversity_impact");
+    const bi_list = document.getElementById("bi_list").options;
+    biodiversity_impact.addEventListener("click", (event) => {
+
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<bi_list.length; i++) {
+            bi_list[i].classList.remove("bold_tick");
+        }
+
+        if (event.target.value < 33) {
+            bi_list[0].classList.add("bold_tick");
+        } else if (event.target.value < 66) {
+            bi_list[1].classList.add("bold_tick");
+        } else {
+            bi_list[2].classList.add("bold_tick");
+        }
+    });
+    toggleSlider("bi_checkbox", "bi_slider_composite","bi_title");
 
 
 
