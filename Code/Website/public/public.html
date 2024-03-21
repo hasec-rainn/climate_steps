@@ -133,7 +133,7 @@
     }
 
     .section_title {
-        width: var(--w);
+        width: var(--bw);
         margin: 0px;
         text-align: center;
     }
@@ -157,7 +157,8 @@
     }
 
     .subsection_title {
-        width: var(--w);
+        /* subtracting --il from the width corrects text centering*/
+        width: calc(var(--w) - var(--il));
         margin: 0px;
         text-align: center;
     }
@@ -424,7 +425,7 @@
 
 
     .adv_search_drop_chevron {
-        width: var(--w);
+        width: var(--bw);
         margin: 0px;
         text-align: center;
         font-size: 35px;
