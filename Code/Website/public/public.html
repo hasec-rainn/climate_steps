@@ -16,7 +16,7 @@
     :root {
         --g: 1px; /*the gap in the thumb*/
         --l: 10px; /*line thickness*/
-        --pl: 10px; /*Indent (padding) added to the left side of options in dropdown*/
+        --il: 10px; /*Indent added to the left side of options in dropdown*/
         --ts: 20px; /*thumb size*/
         --w: 400px; /*width of the slider*/
         --h: 30px; /*slider height*/
@@ -139,8 +139,12 @@
     }
 
     .subsection_option {
-        padding-bottom: 60px;
-        padding-left: var(--pl);
+        margin-bottom: 60px;
+        margin-left: var(--il);
+        margin-right: var(--il);
+        padding-bottom: 30px;
+        background-color: var(--bcq);
+        border-radius: 10px;
     }
 
     .subsection_option.wiat {
@@ -161,7 +165,7 @@
     .radio_option {
         display: block;
         padding-top: 10px;
-        padding-left: var(--pl);
+        padding-left: var(--il);
     }
 
     /*Below is all CSS related to motivation, barrier, and opportunity sliders*/
