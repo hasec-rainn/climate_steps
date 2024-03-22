@@ -26,7 +26,7 @@
         --bcs: #243844; /*background color for sections in the dropdown*/
         --bcq: #365365; /*background color for individual questions in sections*/
         --tc: white; /*Color of text in dialoge boxes*/
-        --b: 15px; /*how thick the outline of the dropdown box is*/
+        --b: 20px; /*how thick the outline of the dropdown box is*/
     }
     
     .tool_title { 
@@ -421,10 +421,10 @@
 
     .adv_search { 
         background-color: var(--bc);
-        box-shadow: 0px 0px 0px var(--b) var(--oc);
         width: var(--bw);
+        border-top: calc(var(--b)*2);
+        border: var(--b) solid var(--oc);
         color: var(--tc);
-        margin: var(--b);
     }
 
     .adv_search_embeded_dropdown {
