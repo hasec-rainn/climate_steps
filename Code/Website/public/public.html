@@ -29,9 +29,19 @@
         --b: 10px; /*how thick the outline of the dropdown box is*/
     }
     
-    body {
-        background-color: rgb(255, 255, 255);
+    .tool_title { text-align: center; }
+
+    .tool_title.small { 
+        margin-top: 0px;
+        margin-bottom: 60px; 
     }
+
+    .tool_title.large {
+        margin-top: 0px; 
+        margin-bottom: 10px;
+    }
+
+    body { background-color: rgb(255, 255, 255); }
 
     .css-checkbox { 
         position: absolute;
@@ -151,7 +161,7 @@
         background-color: var(--bcq);
         padding-left: 0px;
         padding-top: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         border-radius: 10px;
         margin: 15px;
     }
@@ -478,7 +488,8 @@
 
 <button onclick="toggleDropDown('adv_search_dropdown', null)" class="drop_button">Personalization Tool</button>
 <div id="adv_search_dropdown" class="adv_search">
-
+    <h1 class="tool_title large">CSteps Personalization Tool</h1>
+    <h3 class="tool_title small">To help you find your actions</h3>
     <!--Where I am at section-->
     <div class="section">
         <div class="section_title">
@@ -581,7 +592,7 @@
                         </div>
                         <div class="radio_option">
                             <input id="habit_flexible" name="eat_habits" type="radio" value="HABIT_FLEXIBLE">
-                            <label for="habit_flexible">Flexible</label>
+                            <label for="habit_flexible">Flexible / Omnivore</label>
                         </div>
                         <div class="radio_option">
                             <input id="habit_other" name="eat_habits" type="radio" value="HABIT_OTHER">
@@ -597,6 +608,10 @@
                         <div class="radio_option">
                             <input id="trans_gas" name="transportation" type="radio" value="TRANS_GAS">
                             <label for="trans_gas">Use a gas vehicle</label>
+                        </div>
+                        <div class="radio_option">
+                            <input id="trans_hybrid" name="transportation" type="radio" value="TRANS_HYBRID">
+                            <label for="trans_hybrid">Use a hybrid vehicle</label>
                         </div>
                         <div class="radio_option">
                             <input id="trans_better" name="transportation" type="radio" value="TRANS_BETTER">
@@ -623,7 +638,7 @@
                         </div>
                         <div class="radio_option">
                             <input id="habit_no" name="travel_habits" type="radio" value="HABIT_NO">
-                            <label for="habit_no">do not travel</label>
+                            <label for="habit_no">Do not travel</label>
                         </div>
                     </form>
                 </div>
@@ -687,7 +702,7 @@
                     <label for="ci_checkbox"></label>
                     <span class="tooltiptext">Toggles if "Impact Scale" is factored into your search.</span>
                 </div>
-                <h3 id="ci_title" class="subsection_title">Impact Scale
+                <h3 id="ci_title" class="subsection_title">Your Impact on Emissions
                     <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="tooltiptext">The scale at which you want to impact emissions.</span>
                     </div>
@@ -712,7 +727,7 @@
                     <label for="ej_checkbox"></label>
                     <span class="tooltiptext">Toggles if "Environmental Justice Impact" is factored into your search.</span>
                 </div>
-                <h3 id="ej_title" class="subsection_title">Enviornmental Justice
+                <h3 id="ej_title" class="subsection_title">I'm into Enviornmental Justice at...
                     <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
                     </div>
@@ -736,7 +751,7 @@
                     <label for="hi_checkbox"></label>
                     <span class="tooltiptext">Toggles if "Health Impact" is factored into your search.</span>
                 </div>
-                <h3 id="hi_title" class="subsection_title">Health Impact
+                <h3 id="hi_title" class="subsection_title">I Want to Impact the Health of...
                     <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
                     </div>
@@ -760,7 +775,7 @@
                         <label for="li_checkbox"></label>
                         <span class="tooltiptext">Toggles if "Lineage Impact" is factored into your search.</span>
                     </div>
-                    <h3 id="li_title" class="subsection_title">Lineage Impact
+                    <h3 id="li_title" class="subsection_title">For Which Generation?
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
                             <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
                         </div>
