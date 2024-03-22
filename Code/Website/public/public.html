@@ -20,23 +20,30 @@
         --ts: 20px; /*thumb size*/
         --w: 400px; /*width of the slider*/
         --h: 30px; /*slider height*/
-        --bw: 425px; /*container width for adv search options*/
+        --bw: 425px; /*container width for adv search sections*/
         --bc: #3B6AB3;/* #365365; Background color inside the dropdown*/
         --oc: var(--bc); /*Color outlining the main dropdown box*/
         --bcs: #243844; /*background color for sections in the dropdown*/
         --bcq: #365365; /*background color for individual questions in sections*/
         --tc: white; /*Color of text in dialoge boxes*/
-        --b: 10px; /*how thick the outline of the dropdown box is*/
+        --b: 15px; /*how thick the outline of the dropdown box is*/
     }
     
-    .tool_title { text-align: center; }
+    .tool_title { 
+        text-align: center;
+        /*width of a section plus width of outline on both sides*/
+        width: calc(var(--bw) + var(--b)*2) ;
+        color: white;
+    }
 
     .tool_title.small { 
         margin-top: 0px;
-        margin-bottom: 60px; 
+        margin-bottom: 0px;
+        padding-bottom: 10px;
     }
 
     .tool_title.large {
+        padding-top: 10px;
         margin-top: 0px; 
         margin-bottom: 10px;
     }
@@ -417,8 +424,6 @@
         box-shadow: 0px 0px 0px var(--b) var(--oc);
         width: var(--bw);
         color: var(--tc);
-        padding: 5px;
-        padding-top: 10px;
         margin: var(--b);
     }
 
@@ -487,9 +492,11 @@
 <h1>Hello world!</h1>
 
 <button onclick="toggleDropDown('adv_search_dropdown', null)" class="drop_button">Personalization Tool</button>
-<div id="adv_search_dropdown" class="adv_search">
+<div class="tool_title section">
     <h1 class="tool_title large">CSteps Personalization Tool</h1>
     <h3 class="tool_title small">To help you find your actions</h3>
+</div>
+<div id="adv_search_dropdown" class="adv_search">
     <!--Where I am at section-->
     <div class="section">
         <div class="section_title">
