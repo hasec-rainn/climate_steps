@@ -189,9 +189,9 @@
 
     /*Below is all CSS related to motivation, barrier, and opportunity sliders*/
     .barrier_slider {
-        --tc: #B85555; /*thumb color*/
-        --bc: #493232; /*#B85555; /*background color*/
-        --fc:  #493232; /*foreground color*/
+        --tc: #e34646; /*thumb color*/
+        --bc: #B85555; /*#B85555; /*background color*/
+        --fc:  #B85555; /*foreground color*/
         appearance: none;
         background: none;
         cursor: pointer;
@@ -262,9 +262,9 @@
     }
 
     .motivator_slider {
-        --tc: #81B855; /*thumb color*/
-        --bc: #334932; /*#81B855; /*background color*/
-        --fc:  #334932; /*foreground color*/
+        --tc: #46e353; /*thumb color */
+        --bc: #81B855; /*#81B855; /*background color*/
+        --fc:  #81B855; /*foreground color*/
         appearance: none;
         background: none;
         cursor: pointer;
@@ -337,9 +337,9 @@
 
 
     .logistic_slider {
-        --tc: #B0B855; /*thumb color*/
-        --bc: #493F32; /*#B0B855; /*background color*/
-        --fc:  #493F32; /*foreground color*/
+        --tc: #e0e346;  /*thumb color*/
+        --bc: #B0B855; /*#B0B855; /*background color*/
+        --fc: #B0B855; /*foreground color*/
         appearance: none;
         background: none;
         cursor: pointer;
@@ -439,7 +439,7 @@
     /*Must prefix with "div" to inc specificity; else .show is overidden*/
     div.show { display:block; }
 
-    .hidden {display: none; }
+    .hidden { display: none; }
 
     .adv_search_drop_chevron {
         width: var(--bw);
@@ -455,6 +455,10 @@
     of each section clickable*/
     .adv_search_drop_chevron.small_font {
         font-size: 22px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-style: italic;
+        text-decoration: underline;
     }
 
     .adv_search_drop_chevron:hover {
@@ -583,7 +587,7 @@
                         </div>
                     </form>
                 </div>
-
+                <br>
                 <!-- Displays additional questions for "Where I am at" section-->
                 <h2 class="small_font adv_search_drop_chevron" onclick="toggleDropDown('aq_wiat','null')">Additional Questions</h2>
                 <div id="aq_wiat" class="section_questions">
@@ -658,32 +662,28 @@
                         <form id="haa">
                             <h3 class="subsection_title">For heating, cooling, and air-conditioning, I have...</h3>
                             <div class="radio_option">
-                                <input id="haa_electric" name="haa" type="radio" value="HAA_ELECTRIC">
+                                <input id="haa_electric" name="haa" type="checkbox" value="HAA_ELECTRIC">
                                 <label for="haa_electric">Electric heating and air conditioning</label>
                             </div>
                             <div class="radio_option">
-                                <input id="haa_gas" name="haa" type="radio" value="HAA_GAS">
+                                <input id="haa_gas" name="haa" type="checkbox" value="HAA_GAS">
                                 <label for="haa_gas">Gas heating and air conditioning</label>
                             </div>
                             <div class="radio_option">
-                                <input id="haa_oil" name="haa" type="radio" value="HAA_OIL">
+                                <input id="haa_oil" name="haa" type="checkbox" value="HAA_OIL">
                                 <label for="haa_oil">Oil heating and air conditioning</label>
                             </div>
                             <div class="radio_option">
-                                <input id="haa_wood" name="haa" type="radio" value="HAA_WOOD">
+                                <input id="haa_wood" name="haa" type="checkbox" value="HAA_WOOD">
                                 <label for="haa_wood">Wood (or pellet) heating</label>
                             </div>
                             <div class="radio_option">
-                                <input id="haa_mix" name="haa" type="radio" value="HAA_MIX">
-                                <label for="haa_oil">A mixture of the above options</label>
-                            </div>
-                            <div class="radio_option">
-                                <input id="haa_none" name="haa" type="radio" value="HAA_NONE">
-                                <label for="haa_none">I have neither heating nor air conditioning</label>
-                            </div>
-                            <div class="radio_option">
-                                <input id="haa_other" name="haa" type="radio" value="HAA_OTHER">
+                                <input id="haa_other" name="haa" type="checkbox" value="HAA_OTHER">
                                 <label for="haa_other">Something else</label>
+                            </div>
+                            <div class="radio_option">
+                                <input id="haa_none" name="haa" type="checkbox" value="HAA_NONE">
+                                <label for="haa_none">I have neither heating nor air conditioning</label>
                             </div>
                         </form>
                     </div>
@@ -703,8 +703,10 @@
             <div class="section_title">
                 <h1 class="section_title">Motivations</h1>
             </div>
-            <br>
             <div id="motivators" class="section_questions">
+                <h3 class="section_title subtitle">Select any topics that interest you</h3>
+                <br>
+                <br>
                 <!-- Impact Scale (previously called "Carbon Impact") -->
                 <div class="subsection_option">
                     <div class="tooltip">
@@ -838,8 +840,10 @@
             <div class="section_title">
                 <h1 class="section_title">Challenges</h1>
             </div>
-            <br>
             <div id="challenges" class="section_questions">
+                <h3 class="section_title subtitle">Select any challenges you're willing to tackle</h3>
+                <br>
+                <br>
                 <!-- Action Ease -->
                 <div class="subsection_option">
                     <div class="tooltip">
@@ -976,8 +980,10 @@
             <div class="section_title">
                 <h1 class="section_title">Opportunities</h1>
             </div>
-            <br>
             <div id="opportunities" class="section_questions">
+                <h3 class="section_title subtitle">Select any opportunities you'd enjoy</h3>
+                <br>
+                <br>
                 <!-- Sociality -->
                 <div class="subsection_option">
                     <div class="tooltip">
