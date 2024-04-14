@@ -53,7 +53,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$width = (int) apply_filters( 'et_pb_index_blog_image_width', 1080 );
 
 								$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
-
+						?>
+						<?php
 								// If this post is by EH, then add the custom EH logo and credit EH
 								$author = get_post_meta($post->ID, 'Author', true);
 								// check if this custom field has a value; display it if it does, otherwise don't display anything 
@@ -62,6 +63,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 									<a href="https://www.earthhero.org"><img src="/earth_hero_logo.jpg", alt="Earth Hero's logo"></a>
 									<p>Courtesy of <a href="https://www.earthhero.org">www.earthhero.org</a> <?php echo ""; ?></p>
 						<?php 
+								/* Don't add EH credit if it isn't an EH post! */
 								}else{ }
 
 								$classtext = 'et_featured_image';
