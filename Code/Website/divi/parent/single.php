@@ -249,6 +249,17 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							}
 						}else{/*No Resilience benefit to display: show nothing */ }
 
+                        // Add header above post content field if this is an EH post
+						// EH posts always have "Author" field, so we check this way
+                        $author = get_post_meta($post->ID, 'Author', true);
+                        // check if this custom field has a value; display it if it does, otherwise don't display anything 
+                        if($author=="Displayable EH Action"){ 
+					?>
+							<br><br>
+                            <h3>Description</h3>
+					<?php 
+                        }else{ /*The author field must be empty: not an EH post */}
+
 						the_content();
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
