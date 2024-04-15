@@ -161,6 +161,35 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php 
 						}else{ /* No ease rating: do nothing. */ }
 						
+						// set the variable to the value entered for the "Carbon Emissions Per Year" custom field
+						$co2_savings = get_post_meta($post->ID, 'Carbon Emissions Per Year', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($co2_savings){ 
+					?>
+						   <p><b>Carbon Emission Savings:</b> <?php echo $co2_savings; ?></p>
+					<?php 
+						}else{ /* No co2 savings: show nothing */ }
+						
+					  	// set the variable to the value entered for the "Impact Rating" custom field
+						$impact_rating = get_post_meta($post->ID, 'Impact Rating', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($impact_rating || $impact_rating==0){ 
+					?>
+						   <div class="tooltip"> <b>Impact Rating (0-5):</b>
+								<span class="tooltiptext">
+									Impact = 0 (least) - 5 (most). This is a combination of a calculated scale and expert judgment in the absence of scientific data that directly quantifies the impact of a particular action.<br><br> 
+									5 - ~80% target progress (2,000+ kg CO2e)<br>
+									4 - ~60% (1,000 - 2,000 kg CO2e)<br>
+									3 - ~20% (500 - 1,000 kg CO2e)<br>
+									2 - ~10% (100 - 500 kg CO2e)<br>
+									1 - <10% (<100 kg CO2e)<br>
+									0 - <1% (<30 kg CO2e)<br>
+								</span>
+						   </div>
+					<?php 
+						echo $impact_rating; 
+						}else{/*No impact rating to display: show nothing */ }
+						
 						the_content();
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
