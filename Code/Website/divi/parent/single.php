@@ -189,11 +189,50 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php 
 						echo $impact_rating; 
 						}else{/*No impact rating to display: show nothing */ }
+					
+						// set the variable to the value entered for the "Influence Multiplier" custom field
+						$influence_multiplier = get_post_meta($post->ID, 'Influence Multiplier', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($influence_multiplier){ 
+					?>
+					   		<p>
+								<b>No. of People Influenced Beyond You:</b> 
+					<?php
+								//see the desc for the "Influence Multipler" column in the Actions database on Airtable for info regarding why each number correspodns to its respective string
+								switch($influence_multiplier) {
+									case 1:
+										echo "0.";
+										break;
+									case 2:
+										echo "tens of people";
+										break;
+									case 3:
+										echo "hundreds of people";
+										break;
+									case 4:
+										echo "thousands of people.";
+										break;
+								}
+					?>
+						   	</p>
+					<?php 
+						}else{ /* Nothing to Display */ }
 						
+						// set the variable to the value entered for the "Amount Savings" custom field
+						$amount_savings = get_post_meta($post->ID, 'Amount Savings', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($amount_savings){ 
+					?>
+						   <p><b>Amount of Savings:</b> <?php echo $amount_savings; ?></p>
+						
+					<?php 
+						}else{/*Nothing to Display: do nothing */ }
+
 						the_content();
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
+					
 					</div>
 					<div class="et_post_meta_wrapper">
 					<?php
