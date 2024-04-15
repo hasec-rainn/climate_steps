@@ -228,6 +228,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php 
 						}else{/*Nothing to Display: do nothing */ }
 
+						// set the variable to the value entered for the "Resilience Benefit" custom field
+						$resilience_benefit = get_post_meta($post->ID, 'Resilience Benefit', true);
+						// ALWAYS display this field if post is from EH
+						// all EH posts have "Author" field, so this
+						// can be used as a check if a post is EH or not
+						if(get_post_meta($post->ID, 'Author', true)){ 
+					?>
+							<div class="tooltip">
+								<b>Resilience Benefit: </b>
+								<span class="tooltiptext">
+									Will this action help the user avoid, reduce, or recover from the impacts of (climate-driven) disasters, and, in some cases, enable the user to help others (e.g., in a family or community)?
+								</span>
+							</div>
+					<?php 
+							if ($resilience_benefit) {
+								echo "yes";
+							} else {
+								echo "no";
+							}
+						}else{/*No Resilience benefit to display: show nothing */ }
+
 						the_content();
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
