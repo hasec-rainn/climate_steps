@@ -143,6 +143,24 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php
 						do_action( 'et_before_content' );
 
+						// set the variable to the value entered for the "Photo Credit" custom field
+						$credit = get_post_meta($post->ID, 'Photo Credit', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($credit){ 
+					?>
+							<p><?php echo $credit; ?> <br></p>
+					<?php 
+						}else{ /* There is no photo credit: display nothing. */ }
+					
+						// set the variable to the value entered for the "Ease Rating" custom field
+						$ease_rating = get_post_meta($post->ID, 'Ease Rating', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($ease_rating){ 
+					?>
+							<p><b>Ease Rating:</b> <?php echo $ease_rating; ?></p>
+					<?php 
+						}else{ /* No ease rating: do nothing. */ }
+						
 						the_content();
 
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
