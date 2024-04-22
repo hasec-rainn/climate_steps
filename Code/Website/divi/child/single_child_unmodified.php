@@ -53,40 +53,39 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$width = (int) apply_filters( 'et_pb_index_blog_image_width', 1080 );
 
 								$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
-                        ?>
-<?php /********************************Begin EH Code ********************************/ ?>
-                        <?php
-                            // If this post is by EH, then add the custom EH logo and credit EH
-                            $author = get_post_meta($post->ID, 'Author', true);
-                            // check if this custom field has a value; display it if it does, otherwise don't display anything 
-                            if($author=="Displayable EH Action"){
-                        ?>
-                                <a href="https://www.earthhero.org"><img src="/earth_hero_logo.jpg", alt="Earth Hero's logo"></a>
-                                <p>Courtesy of <a href="https://www.earthhero.org">www.earthhero.org</a> <?php echo ""; ?></p>
-                        <?php 
-                            }else{ }
+	                          
+	                            // If this post is by EH, then add the custom EH logo and credit EH
+                                $author = get_post_meta($post->ID, 'Author', true);
+                                // check if this custom field has a value; display it if it does, otherwise don't display anything 
+                                if($author=="Displayable EH Action"){
+                                  ?>
+                                     <a href="https://www.earthhero.org"><img src="/earth_hero_logo.jpg", alt="Earth Hero's logo"></a>
+                                     <p>Courtesy of <a href="https://www.earthhero.org">www.earthhero.org</a> <?php echo ""; ?></p>
+                              <?php 
+                               }else{ 
+                               }
                           
-                            $classtext = 'et_featured_image';
-                            $titletext = get_the_title();
-                            $alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
-                            $thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
-                            $thumb = $thumbnail["thumb"];
+								$classtext = 'et_featured_image';
+								$titletext = get_the_title();
+								$alttext = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+								$thumbnail = get_thumbnail( $width, $height, $classtext, $alttext, $titletext, false, 'Blogimage' );
+								$thumb = $thumbnail["thumb"];
 
-                            $post_format = et_pb_post_format();
+								$post_format = et_pb_post_format();
 
-                            if ( 'video' === $post_format && false !== ( $first_video = et_get_first_video() ) ) {
-                                printf(
-                                    '<div class="et_main_video_container">
-                                        %1$s
-                                    </div>',
-                                    et_core_esc_previously( $first_video )
-                                );
-                            } else if ( ! in_array( $post_format, array( 'gallery', 'link', 'quote' ) ) && 'on' === et_get_option( 'divi_thumbnails', 'on' ) && '' !== $thumb ) {
-                                print_thumbnail( $thumb, $thumbnail["use_timthumb"], $alttext, $width, $height );
-                            } else if ( 'gallery' === $post_format ) {
-                                et_pb_gallery_images();
-                            }
-                        ?>
+								if ( 'video' === $post_format && false !== ( $first_video = et_get_first_video() ) ) {
+									printf(
+										'<div class="et_main_video_container">
+											%1$s
+										</div>',
+										et_core_esc_previously( $first_video )
+									);
+								} else if ( ! in_array( $post_format, array( 'gallery', 'link', 'quote' ) ) && 'on' === et_get_option( 'divi_thumbnails', 'on' ) && '' !== $thumb ) {
+									print_thumbnail( $thumb, $thumbnail["use_timthumb"], $alttext, $width, $height );
+								} else if ( 'gallery' === $post_format ) {
+									et_pb_gallery_images();
+								}
+							?>
 
 							<?php
 								$text_color_class = et_divi_get_post_text_color();
@@ -248,7 +247,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                           }else{
                           }
                           
-                          // set the variable to the value entered for the "Impacts" custom field
+                        // set the variable to the value entered for the "Impacts" custom field
                           $impacts = get_post_meta($post->ID, 'Impacts', true);
                           // check if this custom field has a value; display it if it does, otherwise don't display anything 
                           if($impacts){ ?>
