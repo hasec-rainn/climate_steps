@@ -55,6 +55,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 								$height = (int) apply_filters( 'et_pb_index_blog_image_height', 675 );
 						?>
 						<?php
+/********************************** Begin EH Post Header ***********************************/
 								// If this post is by EH, then add the custom EH logo and credit EH
 								$author = get_post_meta($post->ID, 'Author', true);
 								// check if this custom field has a value; display it if it does, otherwise don't display anything 
@@ -65,6 +66,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<?php 
 								/* Don't add EH credit if it isn't an EH post! */
 								}else{ }
+/********************************** End EH Post Header ***********************************/
 
 								$classtext = 'et_featured_image';
 								$titletext = get_the_title();
@@ -142,6 +144,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<div class="entry-content">
 					<?php
 						do_action( 'et_before_content' );
+/********************************** Begin EH Content Generator ***********************************/
 
 						// set the variable to the value entered for the "Photo Credit" custom field
 						$credit = get_post_meta($post->ID, 'Photo Credit', true);
@@ -249,6 +252,54 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							}
 						}else{/*No Resilience benefit to display: show nothing */ }
 
+						// set the variable to the value entered for the "Impacts" custom field
+						$impacts = get_post_meta($post->ID, 'Impacts', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($impacts){ 
+					?>
+							<p>
+								<b>Impacts:</b>
+					<?php
+								echo $impacts;
+					?>
+							</p>
+					<?php 
+						}else{ /*Do nothing: there are no impacts to display */ }
+
+						// set the variable to the value entered for the "Impacts" custom field
+						$categories = get_post_meta($post->ID, 'Categories', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($categories){ 
+					?>
+							<p>
+								<b>Categories:</b>
+					<?php
+								echo $categories;
+					?>
+							</p>
+					<?php 
+						}else{ /*Do nothing: there are no categories to display */ }
+
+						// set the variable to the value entered for the "Impacts" custom field
+						$tips = get_post_meta($post->ID, 'Tips', true);
+						// check if this custom field has a value; display it if it does, otherwise don't display anything 
+						if($tips){ 
+					?>
+							<p>
+								<h3>Tips</h3>
+					<?php
+								// formats tips so each starts on new line
+								// first tip lacks <br> since preceed by <h3>
+								$t_arr = explode("•", $tips);
+								echo "•" . $t_arr[1];
+								for($t = 2; $t < sizeof($t_arr); $t++) {
+									echo "<br>•" . $t_arr[$t];
+								}
+					?>
+							</p>
+					<?php 
+						}else{ /*Do nothing: there are no tips to display */ }
+
                         // Add header above post content field if this is an EH post
 						// EH posts always have "Author" field, so we check this way
                         $author = get_post_meta($post->ID, 'Author', true);
@@ -259,6 +310,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
                             <h3>Description</h3>
 					<?php 
                         }else{ /*The author field must be empty: not an EH post */}
+/********************************** End EH Content Generator ***********************************/
 
 						the_content();
 
