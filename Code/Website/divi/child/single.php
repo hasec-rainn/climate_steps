@@ -1,5 +1,10 @@
 <?php
 
+// All EH sections can be deleted without impeding normal post
+// generation
+// **Except, the function `the_content()` will need to be
+// to be called again
+
 get_header();
 
 $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
@@ -280,12 +285,29 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<?php 
 						}else{ /*Do nothing: there are no categories to display */ }
 
+						
+                        // Add header above post content field if this is an EH post
+						// EH posts always have "Author" field, so we check this way
+                        $author = get_post_meta($post->ID, 'Author', true);
+                        // check if this custom field has a value; display it if it does, otherwise don't display anything 
+                        if($author=="Displayable EH Action"){ 
+					?>
+							<br><br>
+                            <h3>Description</h3>
+					<?php 
+							the_content();
+                        }else{ //not EH post
+							// **We still need to generate the post content!**
+							the_content();
+						}
+
 						// set the variable to the value entered for the "Impacts" custom field
 						$tips = get_post_meta($post->ID, 'Tips', true);
 						// check if this custom field has a value; display it if it does, otherwise don't display anything 
 						if($tips){ 
 					?>
 							<p>
+								<br><br>
 								<h3>Tips</h3>
 					<?php
 								// formats tips so each starts on new line
@@ -299,21 +321,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							</p>
 					<?php 
 						}else{ /*Do nothing: there are no tips to display */ }
-
-                        // Add header above post content field if this is an EH post
-						// EH posts always have "Author" field, so we check this way
-                        $author = get_post_meta($post->ID, 'Author', true);
-                        // check if this custom field has a value; display it if it does, otherwise don't display anything 
-                        if($author=="Displayable EH Action"){ 
-					?>
-							<br><br>
-                            <h3>Description</h3>
-					<?php 
-                        }else{ /*The author field must be empty: not an EH post */}
 /********************************** End EH Content Generator ***********************************/
-
-						the_content();
-
+						
 						wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'Divi' ), 'after' => '</div>' ) );
 					?>
 					
