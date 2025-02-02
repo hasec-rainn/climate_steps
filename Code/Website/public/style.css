@@ -1,73 +1,203 @@
-body {
-    background-color: lightblue;
-}
-  
-h1 {
-    color: rgb(128, 0, 107);
-    margin-left: 20px;
-}
-
-.slider_1 {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 20%; /* Full-width */
-    border-radius: 5px;
-    height: 15px; /* Specified height */
-    background: rgb(0, 0, 0); /* slider background */
-    ; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-}
-
-.slider_1::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%; 
-    background: #DE6666;
-    cursor: pointer;
-}
-
-.slider_1::-moz-range-track {
-    background: rgb(6, 6, 223);
-    height: 20px;
-}
-
-.slider_1::-webkit-slider-runnable-track {
-    background: tomato;
-    height: 10px;
-}
-
-
-
-
-
-
-
-
-
-.barrier_slider {
-    --tc: #B85555; /*thumb color*/
+:root {
     --g: 1px; /*the gap in the thumb*/
     --l: 10px; /*line thickness*/
+    --il: 10px; /*Indent added to the left side of options in dropdown*/
     --ts: 20px; /*thumb size*/
-    --bc: #B85555; /*background color*/
-    --fc:  #493232; /*foreground color*/
+    --w: 400px; /*width of the slider*/
+    --h: 30px; /*slider height*/
+    --bw: 425px; /*container width for adv search sections*/
+    --bc: #df6060;/*  Background color inside the dropdown*/
+    --oc: var(--bc); /*Color outlining the main dropdown box*/
+    --bcs: #4268a3; /* background color for sections in the dropdown*/
+    --bcq: var(--bcs); /* #365365; /*background color for individual questions in sections*/
+    --tc: white; /*Color of text in dialoge boxes*/
+    --b: 20px; /*how thick the outline of the dropdown box is*/
+}
+
+.tool_title { 
+    text-align: center;
+    /*width of a section plus width of outline on both sides*/
+    width: calc(var(--bw) + var(--b)*2);
+    background-color: var(--bcs);
+    color: white;
+}
+
+.tool_title.small { 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.tool_title.large {
+    padding-top: 10px;
+    margin-top: 0px; 
+    margin-bottom: 10px;
+}
+
+.tool_title.smallest {
+    padding-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+body { background-color: rgb(255, 255, 255); }
+
+.css-checkbox { 
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; 
+    width: 1px; 
+    margin: -1px; 
+    padding: 0; 
+    border: 0; 
+}
+
+#inputPreview { 
+    display: flex; 
+    gap: 20px; 
+    justify-content: center;	
+}
+
+.css-checkbox + label { 
+    position: relative; 
+    font-size: 10px; 
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center; 
+    height: 27px; 
+    color: rgb(0, 0, 0); 
+}
+
+.css-checkbox + label::before { 
+    content: " "; 
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-right: 3px; 
+    width: 25px; 
+    height: 25px; 
+    background-color: white; 
+    border-width: 1px; 
+    border-style: solid; 
+    border-color: rgb(204, 204, 204); 
+    border-radius: 9px; 
+    box-shadow: none; 
+}
+
+.css-checkbox:checked + label::after { 
+    content: " "; 
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMDgwMDljIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+"); 
+    background-repeat: no-repeat; 
+    background-size: 20px 20px; 
+    background-position: center center; 
+    position: absolute; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 0px; 
+    left: 0px; 
+    top: 0px; 
+    text-align: center; 
+    background-color: transparent; 
+    font-size: 10px; 
+    height: 27px; 
+    width: 27px; 
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    font-size: 18px;
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(0, 0, 0);
+    color: var(--tc);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    box-shadow: 5px 5px black 5px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*Hides section's questions so that they can be opened with dropdown functions*/
+.section_questions {
+    display: none;
+}
+
+.section {
+    background-color: var(--bcs);
+    border-radius: 5px;
+}
+
+.section_title {
+    width: var(--bw);
+    margin: 0px;
+    text-align: center;
+}
+
+.subsection_option {
+    margin-bottom: 60px;
+    margin-left: var(--il);
+    margin-right: var(--il);
+    padding-bottom: 30px;
+    background-color: var(--bcq);
+    border-radius: 10px;
+}
+
+.subsection_option.wiat {
+    background-color: var(--bcq);
+    padding-left: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.subsection_title {
+    /* subtracting --il from the width corrects text centering*/
+    width: calc(var(--w) - var(--il));
+    margin: 0px;
+    text-align: center;
+}
+
+.radio_option {
+    display: block;
+    padding-top: 10px;
+    padding-left: var(--il);
+}
+
+/*Below is all CSS related to motivation, barrier, and opportunity sliders*/
+.barrier_slider {
+    --tc: #e24545; /* thumb color*/
+    --bc: #e69898; /* background color*/
+    --fc:  #e69898; /*#8a0000 foreground color*/
     appearance: none;
     background: none;
     cursor: pointer;
     overflow: hidden;
     
 
-    width: 400px;
-    height: 60px;
-    border-radius: 100%;
+    width: var(--w);
+    height: var(--h);
+    border-radius: 42%;
 }
 
 .barrier_slider::-webkit-slider-thumb {
     height: var(--ts);
+    width: var(--ts);
     aspect-ratio: 1;
     border-radius: 100%;
     box-shadow: 0 0 0 50px inset var(--tc);
@@ -91,4 +221,265 @@ h1 {
         100%  calc(50% + var(--l)/2),
         100% 100%,0 100%
     );
+}
+
+
+
+.barrier_slider::-moz-range-thumb {
+    height: var(--ts);
+    width: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}
+
+.motivator_slider {
+    --tc: #46e353; /*#3cbf47 thumb color */
+    --bc: #81B855; /*#4b6b32 background color*/
+    --fc:  #81B855; /*#4b6b32 foreground color*/
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    
+
+    width: var(--w);
+    height: var(--h);
+    border-radius: 42%;
+}
+
+.motivator_slider::-webkit-slider-thumb {
+    height: var(--ts);
+    width: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}
+
+
+
+.motivator_slider::-moz-range-thumb {
+    height: var(--ts);
+    width: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}
+
+
+
+.logistic_slider {
+    --tc: #e0e346;  /*#b8ba3b thumb color*/
+    --bc: #edeeae; /*#787033 /*background color*/
+    --fc: #edeeae; /*#787033 foreground color*/
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    
+
+    width: var(--w);
+    height: var(--h);
+    border-radius: 42%;
+}
+
+.logistic_slider::-webkit-slider-thumb {
+    height: var(--ts);
+    width: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}
+
+
+
+.logistic_slider::-moz-range-thumb {
+    height: var(--ts);
+    width: var(--ts);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 50px inset var(--tc);
+    appearance: none;
+
+    border-image-source: linear-gradient(90deg,var(--bc) 50%, var(--fc) 0); 
+    border-image-slice: 1;
+    border-image-width: 0 100vw;
+    border-image-outset: 0 calc(100vw + var(--g));
+
+
+    clip-path: polygon(
+        0     calc(50% + var(--l)/2),
+        -100vw calc(50% + var(--l)/2),
+        -100vw calc(50% - var(--l)/2),
+        0     calc(50% - var(--l)/2),
+        0 0,100% 0,
+        100%  calc(50% - var(--l)/2),
+        100vw calc(50% - var(--l)/2),
+        100vw calc(50% + var(--l)/2),
+        100%  calc(50% + var(--l)/2),
+        100% 100%,0 100%
+    );
+}    
+
+
+datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    width: var(--w);
+    margin-top: 0px;
+}
+
+.adv_search { 
+    background-color: var(--bc);
+    width: var(--bw);
+    border-top: calc(var(--b)*2);
+    border: var(--b) solid var(--oc);
+    color: var(--tc);
+}
+
+.adv_search_embeded_dropdown {
+    display: none;
+    background-color: var(--bc);
+    color: var(--tc);
+    padding: 0px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+/*Must prefix with "div" to inc specificity; else .show is overidden*/
+div.show { display:block; }
+
+.hidden { display: none; }
+
+.adv_search_drop_chevron {
+    width: var(--bw);
+    margin: 0px;
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 5px;
+    color: var(--tc);
+    cursor: pointer;
+}
+
+/*Not actually a chevron: this is used to make the "More options" at the bottom
+of each section clickable*/
+.adv_search_drop_chevron.small_font {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.adv_search_drop_chevron:hover {
+    color:rgb(144, 144, 144);
+}
+
+.adv_search_checkbox {
+    align-self: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+/*Used with the checkbox to toggle if search options are to be
+used in a user's search*/
+.disabled_element {
+    display: none;
+}
+
+/*Used to show a particular slider is disabled by greying out the title*/
+.disabled_title {
+    color: grey;
+}
+
+
+.bold_tick {
+    font-weight: bolder;
+    font-size: large;
+}
+
+.block {
+    display: block
 }
