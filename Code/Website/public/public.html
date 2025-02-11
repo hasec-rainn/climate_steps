@@ -37,12 +37,11 @@
 
     }
 
-.tool_title { 
+.tool_title {
     text-align: center;
-    /*width of a section plus width of outline on both sides*/
-    width: calc(var(--cw) + var(--b)*2);
-    background-color: var(--bcs);
-    color: var(--tc);
+    background-color: var(--cs_blue2);
+    border-radius: 1em 1em 0em 0em;
+    color: black;
 }
 
 .tool_title.small { 
@@ -158,6 +157,12 @@ body { background-color: rgb(255, 255, 255); }
 /*Hides section's questions so that they can be opened with dropdown functions*/
 .section_questions {
     display: none;
+    text-align: center;
+}
+
+.all_sections {
+    border: 1em solid var(--cs_blue1);
+    border-radius: 0% 0% 1em 1em;
 }
 
 .section {
@@ -167,7 +172,6 @@ body { background-color: rgb(255, 255, 255); }
 
 .section_title {
     color: black;
-    width: var(--cw);
     margin: 0px;
     text-align: center;
 }
@@ -191,10 +195,7 @@ body { background-color: rgb(255, 255, 255); }
 }
 
 .subsection_title {
-    /* subtracting --il from the width corrects text centering*/
-    width: calc(var(--w) - var(--il));
     margin: 0px;
-    text-align: center;
 }
 
 .radio_option {
@@ -436,11 +437,8 @@ datalist {
 }
 
 .adv_search { 
-    background-color: var(--bc);
-    width: var(--cw);
-    border: var(--b) solid var(--cs_blue1);
-    border-radius: var(--br);
-    color: var(--tc);
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .adv_search_embeded_dropdown {
@@ -512,13 +510,12 @@ used in a user's search*/
 <h1>Hello world!</h1>
 
 <button onclick="toggleDropDown('adv_search_dropdown', null)" class="drop_button">Personalization Tool</button>
-<div id="adv_search_dropdown" class="hidden">
+<div id="adv_search_dropdown" class="adv_search hidden">
     <div id="personalization_title" class="tool_title">
-        <h1 class="tool_title large">CSteps Personalization Tool</h1>
-        <h3 class="tool_title small">To help you find your actions</h3>
-        <h6 class="tool_title smallest">This information is not stored beyond this search.</h5>
+        <h1 class="tool_title large">CS Coach</h1>
+        <h3 class="tool_title small">Find the right steps for YOU</h3>
     </div>
-    <div id="all_sections" class="adv_search">
+    <div id="all_sections" class="all_sections">
         <!--Where I am at section-->
         <div class="section">
             <div class="section_title">
