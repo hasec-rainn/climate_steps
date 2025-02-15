@@ -27,10 +27,13 @@
 }
 
 .tool_title {
-text-align: center;
-background-color: var(--cs_blue2);
-border-radius: 1em 1em 0em 0em;
-color: black;
+    text-align: center;
+    background-color: var(--cs_blue2);
+    border-radius: 1em 1em 0em 0em;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tool_title.small { 
@@ -45,11 +48,8 @@ margin-top: 0px;
 margin-bottom: 10px;
 }
 
-.tool_title.smallest {
-padding-bottom: 30px;
-margin-top: 0px;
-margin-bottom: 0px;
-font-style: italic;
+.container {
+    margin-left: 5%;
 }
 
 body { background-color: rgb(255, 255, 255); }
@@ -429,8 +429,8 @@ margin-top: 0px;
 }
 
 .adv_search { 
-margin-left: 20%;
-margin-right: 20%;
+margin-left: 25%;
+margin-right: 25%;
 color: var(--tc)
 }
 
