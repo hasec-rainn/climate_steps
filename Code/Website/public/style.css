@@ -21,6 +21,9 @@
 --b: 20px; /*how thick the outline of the dropdown box is*/
 --br: 10%; /*How much border radius*/
 
+/*CSS for the ClimateSteps header*/
+
+
 }
 
 .tool_title {
@@ -114,25 +117,27 @@ width: 27px;
 }
 
 .tooltip {
-position: relative;
-display: inline-block;
+    position: relative;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    align-items: start;
+    justify-items: center;
 }
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-font-size: 18px;
-visibility: hidden;
-width: 120px;
-background-color: rgb(0, 0, 0);
-color: var(--tc);
-text-align: center;
-padding: 5px 0;
-border-radius: 6px;
-box-shadow: 5px 5px black 5px;
-
-/* Position the tooltip text - see examples below! */
-position: absolute;
-z-index: 1;
+    font-size: 18px;
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(229 227 227);
+    color: var(--tc);
+    text-align: center;
+    padding: 5px 0;
+    
+    position: absolute;
+    margin-top: 5%;
+    z-index: 1;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -152,8 +157,9 @@ border-radius: 0% 0% 1em 1em;
 }
 
 .section {
-background-color: var(--bcs);
-border-radius: 5px;
+    background-color: var(--bcs);
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .section_title {
@@ -425,6 +431,7 @@ margin-top: 0px;
 .adv_search { 
 margin-left: 20%;
 margin-right: 20%;
+color: var(--tc)
 }
 
 .adv_search_embeded_dropdown {
