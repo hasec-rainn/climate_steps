@@ -10,7 +10,7 @@
 --l: 10px; /*line thickness*/
 --il: 10px; /*Indent added to the left side of options in dropdown*/
 --ts: 20px; /*thumb size*/
---w: 75%; /*width of the slider*/
+--w: 100%; /*width of the slider*/
 --h: 30px; /*slider height*/
 --cw: 425px; /*container width for adv search sections*/
 --bc: #df6060;/*  Background color inside the dropdown*/
@@ -163,9 +163,14 @@ border-radius: 0% 0% 1em 1em;
 }
 
 .section_title {
-color: black;
-margin: 0px;
-text-align: center;
+    color: black;
+    margin: 0px;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .subsection_option {
@@ -280,7 +285,7 @@ cursor: pointer;
 overflow: hidden;
 
 
-width: 75%;
+width: var(--w);
 height: var(--h);
 border-radius: 42%;
 }
