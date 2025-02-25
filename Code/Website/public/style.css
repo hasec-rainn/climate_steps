@@ -1,29 +1,24 @@
-
 :root {
-/*Climate Steps colors*/
---cs_red1: #C63228;
---cs_blue2: #DF8E9B;
---cs_blue1: #335FAC;
---cs_blue2: #82A1D0;
+    /*Climate Steps colors*/
+    --cs_red1: #C63228;
+    --cs_blue2: #DF8E9B;
+    --cs_blue1: #335FAC;
+    --cs_blue2: #82A1D0;
 
---g: 1px; /*the gap in the thumb*/
---l: 10px; /*line thickness*/
---il: 10px; /*Indent added to the left side of options in dropdown*/
---ts: 20px; /*thumb size*/
---w: 100%; /*width of the slider*/
---h: 30px; /*slider height*/
---cw: 425px; /*container width for adv search sections*/
---bc: #df6060;/*  Background color inside the dropdown*/
---oc: var(--bc); /*Color outlining the main dropdown box*/
---bcs: white; /*#4268a3;  background color for sections in the dropdown*/
---bcq: var(--bcs); /* #365365; /*background color for individual questions in sections*/
---tc: #335EAD; /*Color of text in dialoge boxes*/
---b: 20px; /*how thick the outline of the dropdown box is*/
---br: 10%; /*How much border radius*/
-
-/*CSS for the ClimateSteps header*/
-
-
+    --g: 1px; /*the gap in the thumb*/
+    --l: 10px; /*line thickness*/
+    --il: 10px; /*Indent added to the left side of options in dropdown*/
+    --ts: 20px; /*thumb size*/
+    --w: 100%; /*width of the slider*/
+    --h: 30px; /*slider height*/
+    --cw: 425px; /*container width for adv search sections*/
+    --bc: #df6060;/*  Background color inside the dropdown*/
+    --oc: var(--bc); /*Color outlining the main dropdown box*/
+    --bcs: white; /*#4268a3;  background color for sections in the dropdown*/
+    --bcq: var(--bcs); /* #365365; /*background color for individual questions in sections*/
+    --tc: #335EAD; /*Color of text in dialoge boxes*/
+    --b: 20px; /*how thick the outline of the dropdown box is*/
+    --br: 10%; /*How much border radius*/
 }
 
 .tool_title {
@@ -202,6 +197,13 @@ padding-left: var(--il);
 }
 
 /*Below is all CSS related to motivation, barrier, and opportunity sliders*/
+option {
+    flex: 1;
+    height: 90%;
+    text-align: center;
+    margin: 5px 10px;
+}
+
 .barrier_slider {
 --tc: #e24545; /* thumb color*/
 --bc: #e69898; /* background color*/
