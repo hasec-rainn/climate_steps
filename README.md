@@ -21,4 +21,7 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [ ] Implementing the functionality of the CSteps Coach search tool to allow for EH posts to be both searched and displayed to the user (Chase/Trent)
     - [ ] Adding appropriate tags to EH posts to enable EH posts to be searched/filtered based off of their tags (Chase)
     - [ ] Searching/filtering EH posts based on their tags and based on certain keywords contained within the posts (Trent)
-    * Search should be able to handle filtering/searching through 2000 posts
+        * Search should be able to handle filtering/searching through 2000 posts
+        * Users' search input and data should not be stored long-term; user data should only be temporarily stored to perform the search and display the results.
+        * The search results page of the CSteps Coach tool should be formatted like the search results of the regular search tool on the Climate Steps website
+            * If time allows, a logo of EH and a small image thumbnail should be added alongside each post on the result page
