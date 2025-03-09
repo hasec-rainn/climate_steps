@@ -1,7 +1,7 @@
 :root {
     /*Climate Steps colors*/
     --cs_red1: #C63228;
-    --cs_blue2: #DF8E9B;
+    --cs_red2: #DF8E9B;
     --cs_blue1: #335FAC;
     --cs_blue2: #82A1D0;
 
@@ -19,6 +19,29 @@
     --tc: #335EAD; /*Color of text in dialoge boxes*/
     --b: 20px; /*how thick the outline of the dropdown box is*/
     --br: 10%; /*How much border radius*/
+}
+
+.sticky_search {
+    position: sticky;
+    top: 50vh;
+    right: 7.25vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+button.sticky_search {
+    font-size: 6vmin;
+    color: whitesmoke;
+    background-color: var(--cs_blue1);
+    border: 0.5vmin solid var(--cs_red1);
+    border-radius: 15px;
+    box-shadow: 3px 7px 9px 0px black
+}
+
+button.sticky_search:hover {
+    background-color: var(--cs_blue2);
+    border: 0.5vmin solid var(--cs_red2);
 }
 
 .tool_title {
