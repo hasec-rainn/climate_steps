@@ -5,9 +5,9 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [X] Increase the size of the slider text when it becomes selected/bolded (Chase)
 - [X] For sections, add more space between the title icon and title text (Chase)
 - [X] Change the tool's title to be "CSteps Coach" (Chase)
-- [ ] Increase the vertical spacing between the tool's title and subtitle (Chase)
-- [ ] Make the subtitle of the tool in itallics instead of bolded (Chase)
-- [ ] Decrease the spacing between the last question before the "Additional Questions" button and the "Additional Questions" button in each section (Chase)
+- [X] Increase the vertical spacing between the tool's title and subtitle (Chase)
+- [X] Make the subtitle of the tool in itallics instead of bolded (Chase)
+- [X] Decrease the spacing between the last question before the "Additional Questions" button and the "Additional Questions" button in each section (Chase)
 - [ ] Add in some accessibility css to make the tool easier to view on a cell phone (Chase)
 
 # Features to be added in Phase 2

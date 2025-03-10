@@ -28,6 +28,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 0;
 }
 
 button.sticky_search {
@@ -58,12 +59,13 @@ button.sticky_search:hover {
 margin-top: 0px;
 margin-bottom: 0px;
 padding-bottom: 10px;
+font-style: italic;
 }
 
 .tool_title.large {
 padding-top: 10px;
 margin-top: 0px; 
-margin-bottom: 10px;
+margin-bottom: 15%;
 }
 
 .container {
@@ -461,7 +463,10 @@ margin-top: 0px;
 .adv_search { 
 margin-left: 25%;
 margin-right: 25%;
-color: var(--tc)
+color: var(--tc);
+
+position: relative;
+z-index: 1;
 }
 
 .adv_search_embeded_dropdown {
@@ -491,7 +496,7 @@ cursor: pointer;
 of each section clickable*/
 .adv_search_drop_chevron.small_font {
 font-size: 22px;
-margin-top: 30px;
+margin-top: -35px;
 margin-bottom: 30px;
 font-style: italic;
 text-decoration: underline;
