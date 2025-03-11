@@ -193,6 +193,12 @@ width: 27px;
     margin-top: 5%;
     z-index: 1;
 }
+@media (pointer: coarse) {
+    .tooltip .tooltiptext { 
+        margin-top: 10%;
+    }
+}
+
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
