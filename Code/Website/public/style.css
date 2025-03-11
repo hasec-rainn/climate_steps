@@ -63,10 +63,12 @@
 @media (pointer: coarse) {
     .sticky_search {
         position: sticky;
-        top: 90vh;
+        top: 0vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 2;
+        margin-bottom: 1vh;
     }
 
     button.sticky_search {
@@ -76,6 +78,11 @@
         border: 0.5vmin solid var(--cs_red1);
         border-radius: 15px;
         box-shadow: 3px 7px 9px 0px black;
+    }
+
+    button.sticky_search:active {
+        background-color: var(--cs_blue2);
+        border: 0.5vmin solid var(--cs_red2);
     }
 }
 
@@ -190,7 +197,7 @@ width: 27px;
     padding: 5px 0;
     
     position: absolute;
-    margin-top: 5%;
+    margin-top: 7.5%;
     z-index: 1;
 }
 @media (pointer: coarse) {
