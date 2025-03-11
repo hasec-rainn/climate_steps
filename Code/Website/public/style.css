@@ -177,6 +177,19 @@ height: 27px;
 width: 27px; 
 }
 
+@media (pointer: coarse) {
+    .css-checkbox:checked + label::after {
+        height: 3em; 
+        width: 5em; 
+        background-size: auto;
+    }
+
+    .css-checkbox + label::before { 
+        width: 5em; 
+        height: 5em; 
+    }
+}
+
 .tooltip {
     position: relative;
     display: grid;
