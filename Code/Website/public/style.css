@@ -261,6 +261,11 @@ border-radius: 0% 0% 1em 1em;
     justify-content: center;
 }
 
+.section_title.subtitle {
+    font-style: italic;
+    font-weight: normal;
+}
+
 .subsection_option {
 margin-bottom: 60px;
 margin-left: var(--il);
@@ -281,6 +286,11 @@ margin: 15px;
 
 .subsection_title {
 margin: 0px;
+}
+
+.subsection_title.explaination {
+    font-style: italic;
+    font-weight: normal;
 }
 
 .radio_option {
