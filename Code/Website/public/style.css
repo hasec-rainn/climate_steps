@@ -1,12 +1,18 @@
 @media (pointer: fine) {
     :root {
         --txtsz: 16px; /*default text size*/
+        --ts: 20px; /*thumb size*/
+        --h: 30px; /*slider height*/
+        --l: 10px; /*line thickness*/
     }
 }
 
 @media (pointer: coarse) {
     :root {
-        --txtsz: 32px; /*Bigger for mobile devices*/
+        --txtsz: 32px; /*default text size*/
+        --ts: 30px; /*thumb size*/
+        --h: 35px; /*slider height*/
+        --l: 15px; /*line thickness*/
     }
 }
 
@@ -18,11 +24,8 @@
     --cs_blue2: #82A1D0;
     
     --g: 1px; /*the gap in the thumb*/
-    --l: 10px; /*line thickness*/
     --il: 10px; /*Indent added to the left side of options in dropdown*/
-    --ts: 20px; /*thumb size*/
     --w: 100%; /*width of the slider*/
-    --h: 30px; /*slider height*/
     --cw: 425px; /*container width for adv search sections*/
     --bc: #df6060;/*  Background color inside the dropdown*/
     --oc: var(--bc); /*Color outlining the main dropdown box*/
@@ -197,6 +200,11 @@ width: 27px;
     justify-content: center;
     align-items: start;
     justify-items: center;
+}
+@media (pointer: coarse) {
+    .tooltip { 
+        margin-bottom: 1.5%;
+    }
 }
 
 /* Tooltip text */
