@@ -52,7 +52,7 @@
         font-size: 6vmin;
         color: whitesmoke;
         background-color: var(--cs_blue1);
-        border: 0.5vmin solid var(--cs_red1);
+        border: 0.5vmin solid var(--cs_red2);
         border-radius: 15px;
         box-shadow: 3px 7px 9px 0px black
     }
@@ -78,7 +78,7 @@
         font-size: 13vmin;
         color: whitesmoke;
         background-color: var(--cs_blue1);
-        border: 0.5vmin solid var(--cs_red1);
+        border: 0.5vmin solid var(--cs_red2);
         border-radius: 15px;
         box-shadow: 3px 7px 9px 0px black;
     }
