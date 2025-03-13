@@ -209,9 +209,8 @@ width: 27px;
 
 /* Tooltip text */
 .tooltip .tooltiptext {
-    font-size: 18px;
     visibility: hidden;
-    width: 120px;
+    width: 30%;
     background-color: rgb(229 227 227);
     color: var(--tc);
     text-align: center;
