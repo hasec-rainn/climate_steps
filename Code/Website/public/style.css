@@ -4,6 +4,7 @@
         --ts: 20px; /*thumb size*/
         --h: 30px; /*slider height*/
         --l: 10px; /*line thickness*/
+        --spacing_constant: 5%; /*Space between questions*/
     }
 }
 
@@ -13,6 +14,7 @@
         --ts: 30px; /*thumb size*/
         --h: 35px; /*slider height*/
         --l: 15px; /*line thickness*/
+        --spacing_constant: 10%; /*Space between questions*/
     }
 }
 
@@ -285,12 +287,12 @@ border-radius: 0% 0% 1em 1em;
 }
 
 .subsection_option {
-margin-bottom: 60px;
-margin-left: var(--il);
-margin-right: var(--il);
-padding-bottom: 30px;
-background-color: inherit;
-border-radius: 10px;
+    margin-left: var(--il);
+    margin-right: var(--il);
+    padding-bottom: 30px;
+    background-color: inherit;
+    border-radius: 10px;
+    margin-bottom: var(--spacing_constant);
 }
 
 .subsection_option.wiat {
@@ -603,7 +605,7 @@ of each section clickable*/
 .adv_search_drop_chevron.small_font {
 margin-top: -35px;
 font-size: 1.5em;
-margin-bottom: 30px;
+margin-bottom: var(--spacing_constant);
 font-style: italic;
 text-decoration: underline;
 }
