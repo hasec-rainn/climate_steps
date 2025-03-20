@@ -214,8 +214,10 @@ width: 27px;
     justify-items: center;
 }
 @media (pointer: coarse) {
-    .tooltip { 
-        margin-bottom: 1.5%;
+    .tooltip {
+        /*This is to ensure there is sufficient space between
+        checkboxes and their corresponding text*/
+        padding-bottom: 1.5%;
     }
 }
 
