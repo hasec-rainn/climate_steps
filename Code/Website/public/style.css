@@ -96,7 +96,7 @@
 }
 
 .tool_title {
-    padding: 1%;
+    padding: 2%;
     text-align: center;
     background-color: var(--cs_blue2);
     border-radius: 1em 1em 0em 0em;
@@ -108,16 +108,12 @@
 }
 
 .tool_title.small { 
-margin-top: 0px;
-margin-bottom: 0px;
-padding-bottom: 10px;
-font-style: italic;
+    margin: 0px;
+    font-style: italic;
 }
 
 .tool_title.large {
-padding-top: 10px;
-margin-top: 0px; 
-margin-bottom: 15%;
+    margin: 0px; 
 }
 
 .container {
