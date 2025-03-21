@@ -36,7 +36,7 @@
     --tc: #335EAD; /*Color of text in dialoge boxes*/
     --b: 20px; /*how thick the outline of the dropdown box is*/
     --br: 10%; /*How much border radius*/
-    --disabled_color: #bebebe;
+    --disabled_color: #c8c8c8; /*#bebebe;*/
     font-size: var(--txtsz);
     color: black;
 }
@@ -262,12 +262,12 @@ text-align: center;
 }
 
 .all_sections {
-border: 1em solid var(--cs_blue1);
+border: 1em solid var(--cs_blue2);
 border-radius: 0% 0% 1em 1em;
 }
 
 .blue {
-    background: var(--cs_blue1);
+    background: var(--cs_blue2);
     color: white;
 }
 
