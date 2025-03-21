@@ -268,7 +268,7 @@ border-radius: 0% 0% 1em 1em;
 
 .blue {
     background: var(--cs_blue1);
-    color: white
+    color: white;
 }
 
 .white {
@@ -277,8 +277,8 @@ border-radius: 0% 0% 1em 1em;
 }
 
 .section {
-    margin-top: 2.5%;
-    margin-bottom: 2.5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
 }
 
 .section.no_margin_bottom {

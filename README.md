@@ -34,3 +34,5 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [X] Add in information text to inform user that information entered on the page will not be stored beyond using it to perform the search 
 - [X] Move info button to be right next to the subsection (subject) text. Additionally, have the info button grey out when the subject is disabled.
 - [X] Swap shield icon with hurtle icon
+- [ ] Change blue color to be lighter
+- [X] Add a bit more space above titles of blue sections
