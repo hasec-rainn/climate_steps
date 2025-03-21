@@ -1,7 +1,10 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Disabled section
     <script src="script.js"></script>
+    
+    -->
 
 <!-- 
 [X] put more space between each slider (vertically)
@@ -221,7 +224,7 @@
                 <h1 class="section_title">Motivations</h1>
             </div>
             <div id="motivators" class="section_questions">
-                <h3 class="section_title subtitle">Select any topics that interest you</h3>
+                <h3 class="section_title subtitle">Click the checkbox if you want a subject included in the search</h3>
                 <br>
                 <br>
                 <!-- Impact Scale (previously called "Carbon Impact") -->
@@ -231,12 +234,12 @@
                         <label for="ci_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="ci_title" class="subsection_title disabled_title">My Impact on Emissions
-                        <h5 id="ci_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="ci_title" class="subsection_title disabled_title">My Impact on Emissions &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">The scale at which you want to impact emissions.</span>
+                            <span class="info tooltiptext">The scale at which you want to impact emissions. </span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="ci_slider_composite" class="disabled_element">
                         <input id="carbon_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
                         <datalist id="ci_list">
@@ -257,12 +260,12 @@
                         <label for="ej_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="ej_title" class="subsection_title disabled_title">I'm into Environmental Justice for my...
-                        <h5 id="ej_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>                        
+                    <div class="flexbox">
+                        <h3 id="ej_title" class="subsection_title disabled_title">I'm into Environmental Justice for my...&nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
+                            <span class="info tooltiptext">Where you want your action to yield the most enviornmental justice.</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="ej_slider_composite" class="disabled_element">
                         <input id="enviornmental_justice" type="range" min="0" step="1" max="100" class="motivator_slider"/>
                         <datalist id="ej_list">
@@ -282,12 +285,12 @@
                         <label for="hi_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="hi_title" class="subsection_title disabled_title">I Want to Impact the Health of...
-                        <h5 id="hi_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="hi_title" class="subsection_title disabled_title">I Want to Impact the Health of...&nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">The health impact you want your action to have on you and/or others.</span>
+                            <span class="info tooltiptext">The health impact you want your action to have on you and/or others.</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="hi_slider_composite" class="disabled_element" class="">
                         <input id="health_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
                         <datalist id="hi_list">
@@ -307,12 +310,12 @@
                             <label for="li_checkbox"></label>
                             <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                         </div>
-                        <h3 id="li_title" class="subsection_title disabled_title">For Which Generation?
-                            <h5 id="li_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                        <div class="flexbox">
+                            <h3 id="li_title" class="subsection_title disabled_title">For Which Generation? &nbsp;</h3>
                             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">The impact you want your action to have on (future) generations.</span>
+                                <span class="info tooltiptext">The impact you want your action to have on (future) generations.</span>
                             </div>
-                        </h3>
+                        </div>
                         <div id="li_slider_composite" class="disabled_element">
                             <input id="lineage_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
                             <datalist id="li_list">
@@ -331,12 +334,12 @@
                             <label for="bi_checkbox"></label>
                             <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                         </div>
-                        <h3 id="bi_title" class="subsection_title disabled_title">Biodiversity Impact Scale?
-                            <h5 id="bi_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                        <div class="flexbox">
+                            <h3 id="bi_title" class="subsection_title disabled_title">Biodiversity Impact Scale? &nbsp;</h3>
                             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">The impact you want your action to have on biodiversity.</span>
+                                <span class="info tooltiptext">The impact you want your action to have on biodiversity.</span>
                             </div>
-                        </h3>
+                        </div>
                         <div id="bi_slider_composite" class="disabled_element">
                             <input id="biodiversity_impact" type="range" min="0" step="1" max="100" class="motivator_slider"/>
                             <datalist id="bi_list">
@@ -362,7 +365,7 @@
                 <h1 class="section_title">Challenges</h1>
             </div>
             <div id="challenges" class="section_questions">
-                <h3 class="section_title subtitle">Select any challenges you're willing to tackle</h3>
+                <h3 class="section_title subtitle">Click the checkbox if you want a subject included in the search</h3>
                 <br>
                 <br>
                 <!-- Action Ease -->
@@ -372,12 +375,12 @@
                         <label for="e_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="e_title" class="subsection_title disabled_title">Ease (Time Commitment)
-                        <h5 id="e_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="e_title" class="subsection_title disabled_title">Ease (Time Commitment)&nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">The ease of the action, in regards to how much time it demands. A more difficult action demands more time.</span>
+                            <span class="info tooltiptext">The ease of the action, in regards to how much time it demands. A more difficult action demands more time.</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="e_slider_composite" class="disabled_element">
                         <input id="ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                         <datalist id="e_list">
@@ -396,12 +399,12 @@
                         <label for="af_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="af_title" class="subsection_title disabled_title">Financing
-                        <h5 id="af_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="af_title" class="subsection_title disabled_title">Financing &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">How much money you would like to spend (or receive) from an action.</span>
+                            <span class="info tooltiptext">How much money you would like to spend (or receive) from an action.</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="af_slider_composite" class="disabled_element">
                         <input id="action_financing" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                         <datalist id="af_list">
@@ -420,12 +423,12 @@
                         <label for="sa_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="sa_title" class="subsection_title disabled_title">Social Acceptability
-                        <h5 id="sa_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="sa_title" class="subsection_title disabled_title">Social Acceptability &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">How socially acceptable an action is considered by society.</span>
+                            <span class="info tooltiptext">How socially acceptable an action is considered by society.</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="sa_slider_composite" class="disabled_element">
                         <input id="social_acceptability" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                         <datalist id="sa_list">
@@ -446,12 +449,12 @@
                             <label for="al_checkbox"></label>
                             <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                         </div>
-                        <h3 id="al_title" class="subsection_title disabled_title">Location focus/Willing to travel to...
-                            <h5 id="al_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                        <div class="flexbox">
+                            <h3 id="al_title" class="subsection_title disabled_title">Location focus/Willing to travel to... &nbsp;</h3>
                             <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
+                                <span class="info tooltiptext">Where you would be willing to travel in order to initiate an action.</span>
                             </div>
-                        </h3>
+                        </div>
                         <div id="al_slider_composite" class="disabled_element">
                         <input id="action_location" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                         <datalist id="al_list">
@@ -471,12 +474,12 @@
                         <label for="me_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="me_title" class="subsection_title disabled_title">Ease (Mental)
-                        <h5 id="me_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="me_title" class="subsection_title disabled_title">Ease (Mental) &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">How challenging would you like your actions to be?</span>
+                            <span class="info tooltiptext">How challenging would you like your actions to be?</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="me_slider_composite" class="disabled_element">
                         <input id="mental_ease" type="range" min="0" step="1" max="100" class="barrier_slider"/>
                         <datalist id="ar_list">
@@ -506,7 +509,7 @@
                 <h1 class="section_title">Opportunities</h1>
             </div>
             <div id="opportunities" class="section_questions">
-                <h3 class="section_title subtitle">Select any opportunities you'd enjoy</h3>
+                <h3 class="section_title subtitle">Click the checkbox if you want a subject included in the search</h3>
                 <br>
                 <br>
                 <!-- Sociality -->
@@ -516,12 +519,12 @@
                         <label for="s_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="s_title" class="subsection_title disabled_title">Sociality
-                        <h5 id="s_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="s_title" class="subsection_title disabled_title">Sociality &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">How social would you like your action to be?</span>
+                            <span class="info tooltiptext">How social would you like your action to be?</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="s_slider_composite" class="disabled_element">
                         <input id="sociality" type="range" min="0" step="1" max="100" class="logistic_slider"/>
                         <datalist id="s_list">
@@ -539,12 +542,12 @@
                         <label for="as_checkbox"></label>
                         <span class="tooltiptext">Click the checkbox if you want this subject included in the search</span>
                     </div>
-                    <h3 id="as_title" class="subsection_title disabled_title">Skills
-                        <h5 id="as_explaination" class="subsection_title explaination disabled_title">Click the checkbox if you want this subject included in the search</h5>
+                    <div class="flexbox">
+                        <h3 id="as_title" class="subsection_title disabled_title">Skills &nbsp;</h3>
                         <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <span class="tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
+                            <span class="info tooltiptext">What skills would you like your action to demand of (or teach) you?</span>
                         </div>
-                    </h3>
+                    </div>
                     <div id="as_slider_composite" class="disabled_element">
                         <input id="skills" type="range" min="0" step="1" max="100" class="logistic_slider"/>
                         <datalist id="as_list">
@@ -562,3 +565,272 @@
         </div>
     </div>
 </div>
+
+<script>
+/*slider_id is the id of the slider composite to be disabled or enabled,
+checkbox is the checkbox that will perform the toggle when clicked,
+and title_id is the title that will be greyed out*/
+function toggleSlider(checkbox, slider_id, title_id, explaination_id) {
+    document.getElementById(checkbox).addEventListener("click", (event) => {
+            document.getElementById(slider_id).classList.toggle("disabled_element")
+            document.getElementById(title_id).classList.toggle("disabled_title")
+            document.getElementById(explaination_id).classList.toggle("disabled_title")
+        });
+
+}
+
+/* toggles between hiding and showing the element `drop_down` */
+function toggleDropDown(drop_down, c) {
+    //opens and closes the dropdown
+    document.getElementById(drop_down).classList.toggle("show");
+    
+    //toggles the chevron `c` between pointing up and pointing down
+    if(c != null) {
+        document.getElementById(c).classList.toggle("fa-chevron-down")
+        document.getElementById(c).classList.toggle("fa-chevron-up")
+    }
+}
+
+//Function for Location-based sliders
+function location_updater(slider, slider_list) {
+    slider.addEventListener("click", (event) => {
+        
+        //Ensures only one tick is bolded at a time
+        for(i=0; i<slider_list.length; i++) {
+            slider_list[i].classList.remove("bold_tick")
+        }
+
+        if (event.target.value < 13) {
+            slider_list[0].classList.add("bold_tick");
+        } else if (event.target.value < 38) {
+            slider_list[1].classList.add("bold_tick");
+        } else if (event.target.value < 63) {
+            slider_list[2].classList.add("bold_tick");
+        } else if (event.target.value < 88) {
+            slider_list[3].classList.add("bold_tick");
+        } else {
+            slider_list[4].classList.add("bold_tick");
+        }
+    })  
+}
+
+
+
+
+//Health Impact
+const health_impact = document.querySelector("#health_impact");
+const hi_list = document.getElementById("hi_list").options;
+health_impact.addEventListener("click", (event) => {
+
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<hi_list.length; i++) {
+        hi_list[i].classList.remove("bold_tick")
+    }
+
+    if (event.target.value < 33) {
+        hi_list[0].classList.add("bold_tick")
+    } else if (event.target.value > 66) {
+        hi_list[2].classList.add("bold_tick")
+    } else {
+        hi_list[1].classList.add("bold_tick")
+    }
+});
+
+toggleSlider("hi_checkbox", "hi_slider_composite", "hi_title", "hi_explaination");
+
+
+
+
+//Lineage Impact
+const lineage_impact = document.querySelector("#lineage_impact");
+const li_list = document.getElementById("li_list").options;
+lineage_impact.addEventListener("click", (event) => {
+
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<li_list.length; i++) {
+        li_list[i].classList.remove("bold_tick");
+    }
+
+    if (event.target.value < 13) {
+        li_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 38) {
+        li_list[1].classList.add("bold_tick");
+    } else if (event.target.value < 61) {
+        li_list[2].classList.add("bold_tick");
+    } else {
+        li_list[3].classList.add("bold_tick");
+    }
+});
+toggleSlider("li_checkbox", "li_slider_composite","li_title", "li_explaination");
+
+
+
+//Lineage Impact
+const biodiversity_impact = document.querySelector("#biodiversity_impact");
+const bi_list = document.getElementById("bi_list").options;
+biodiversity_impact.addEventListener("click", (event) => {
+
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<bi_list.length; i++) {
+        bi_list[i].classList.remove("bold_tick");
+    }
+
+    if (event.target.value < 33) {
+        bi_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 66) {
+        bi_list[1].classList.add("bold_tick");
+    } else {
+        bi_list[2].classList.add("bold_tick");
+    }
+});
+toggleSlider("bi_checkbox", "bi_slider_composite","bi_title");
+
+
+
+//Carbon Impact
+const carbon_impact = document.querySelector("#carbon_impact");
+const ci_list = document.getElementById("ci_list").options;
+location_updater(carbon_impact, ci_list);
+toggleSlider("ci_checkbox", "ci_slider_composite","ci_title","ci_explaination");
+
+
+
+//Enviornmental Justice
+const enviornmental_justice = document.querySelector("#enviornmental_justice");
+const ej_list = document.getElementById("ej_list").options;
+location_updater(enviornmental_justice, ej_list);
+toggleSlider("ej_checkbox", "ej_slider_composite", "ej_title","ej_explaination");
+
+
+
+//Action Range
+const mental_ease = document.querySelector("#mental_ease");
+const ar_list = document.getElementById("ar_list").options;
+location_updater(mental_ease, ar_list);
+toggleSlider("me_checkbox", "me_slider_composite", "me_title","me_explaination");
+
+
+
+//Action Location
+const action_location = document.querySelector("#action_location");
+const al_list = document.getElementById("al_list").options;
+location_updater(action_location, al_list);
+toggleSlider("al_checkbox", "al_slider_composite","al_title","al_explaination");
+
+
+
+//Ease
+const ease = document.querySelector("#ease");
+const e_list = document.getElementById("e_list").options;
+ease.addEventListener("click", (event) => {
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<e_list.length; i++) {
+        e_list[i].classList.remove("bold_tick");
+    }
+
+    if (event.target.value < 20) {
+        e_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 50) {
+        e_list[1].classList.add("bold_tick");
+    } else if (event.target.value < 80) {
+        e_list[2].classList.add("bold_tick");
+    } else if (event.target.value < 100) {
+        e_list[3].classList.add("bold_tick");
+    }
+})
+toggleSlider("e_checkbox", "e_slider_composite", "e_title", "e_explaination");
+
+
+
+//Skills
+const skills = document.querySelector("#skills");
+const as_list = document.getElementById("as_list").options;
+skills.addEventListener("click", (event) => {
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<as_list.length; i++) {
+        as_list[i].classList.remove("bold_tick");
+    }
+
+    if (event.target.value < 33) {
+        as_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 66) {
+        as_list[1].classList.add("bold_tick");
+    } else {
+        as_list[2].classList.add("bold_tick");
+    }
+})
+toggleSlider("as_checkbox", "as_slider_composite", "as_title", "as_explaination");
+
+
+
+//Social Acceptability
+const social_acceptability = document.querySelector("#social_acceptability");
+const sa_list = document.getElementById("sa_list").options;
+social_acceptability.addEventListener("click", (event) => {
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<sa_list.length; i++) {
+        sa_list[i].classList.remove("bold_tick");
+    }        
+    
+    if (event.target.value < 20) {
+        sa_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 50) {
+        sa_list[1].classList.add("bold_tick");
+    } else if (event.target.value < 80) {
+        sa_list[2].classList.add("bold_tick");
+    } else {
+        sa_list[3].classList.add("bold_tick");
+    }
+})
+toggleSlider("sa_checkbox", "sa_slider_composite", "sa_title", "sa_explaination");
+
+
+
+//Action Financing
+const action_financing = document.querySelector("#action_financing");
+const af_list = document.getElementById("af_list").options;
+action_financing.addEventListener("click", (event) => {
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<af_list.length; i++) {
+        af_list[i].classList.remove("bold_tick");
+    }        
+    
+    if (event.target.value < 20) {
+        af_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 50) {
+        af_list[1].classList.add("bold_tick");
+    } else if (event.target.value < 80) {
+        af_list[2].classList.add("bold_tick");
+    } else {
+        af_list[3].classList.add("bold_tick");
+    }
+})
+toggleSlider("af_checkbox", "af_slider_composite", "af_title", "af_explaination");
+
+
+
+//Sociality
+const sociality = document.querySelector("#sociality");
+const s_list = document.getElementById("s_list").options;
+sociality.addEventListener("click", (event) => {
+    //Ensures only one tick is bolded at a time
+    for(i=0; i<s_list.length; i++) {
+        s_list[i].classList.remove("bold_tick");
+    }
+
+    if (event.target.value < 33) {
+        s_list[0].classList.add("bold_tick");
+    } else if (event.target.value < 66) {
+        s_list[1].classList.add("bold_tick");
+    } else {
+        s_list[2].classList.add("bold_tick");
+    }
+})
+toggleSlider("s_checkbox", "s_slider_composite", "s_title", "s_explaination");
+
+if (sociality) {
+    console.log("Yes, it exists!")
+} else {
+    console.log("No, it doesn't!")
+}    
+</script>

@@ -36,6 +36,7 @@
     --tc: #335EAD; /*Color of text in dialoge boxes*/
     --b: 20px; /*how thick the outline of the dropdown box is*/
     --br: 10%; /*How much border radius*/
+    --disabled_color: #bebebe;
     font-size: var(--txtsz);
     color: black;
 }
@@ -229,6 +230,7 @@ width: 27px;
     color: var(--tc);
     text-align: center;
     padding: 5px 0;
+    border-radius: 5px;
     
     position: absolute;
     margin-top: 7.5%;
@@ -240,6 +242,13 @@ width: 27px;
     }
 }
 
+
+span.tooltiptext.info {
+    height: auto;
+    width: 15vmax;
+    padding: 1vmin;
+    margin-top: 3vmin;
+}
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
@@ -318,6 +327,14 @@ border-radius: 0% 0% 1em 1em;
 .subsection_title {
     margin: 0px;
     color: inherit;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .subsection_title.explaination {
@@ -640,9 +657,13 @@ display: none;
 
 /*Used to show a particular slider is disabled by greying out the title*/
 .disabled_title {
-color: #bebebe;
+    color: var(--disabled_color);
 }
 
+/*Specifically for greying out the info icon*/
+i.disabled_title {
+    color: var(--disabled_color);
+}
 
 .bold_tick {
 font-weight: bolder;
