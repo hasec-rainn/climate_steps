@@ -25,3 +25,11 @@ The code for the personalization tool can be found in `Code/Website/public/index
         * Users' search input and data should not be stored long-term; user data should only be temporarily stored to perform the search and display the results.
         * The search results page of the CSteps Coach tool should be formatted like the search results of the regular search tool on the Climate Steps website
             * If time allows, a logo of EH and a small image thumbnail should be added alongside each post on the result page
+
+# Features and Improvements to be added for Phase 3
+- [X] Align the header text for the search so that "Find the right steps for YOU" isn't touching the bottom
+- [X] Align the sticky search button so that it aligns with the very top of the tool when the user is at the top of the coach page
+- [X] Fix the spacing around the "Additional Questions" buttons to ensure that all of them have uniform spacing
+- [X] Remove the explaination text below individual subjects. Then, place the explaination "Click the checkbox if you want a subject included in the search" at the start of each section, as a way to cut down on unnecessary text.
+- [ ] Add in information text to inform user that information entered on the page will not be stored beyond using it to perform the search 
+- [ ] Move info button to be right next to the subsection (subject) text. Additionally, have the info button grey out when the subject is disabled.
