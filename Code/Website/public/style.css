@@ -673,3 +673,8 @@ font-size: 2em;
 .block {
 display: block
 }
+
+.disclaimer_text {
+    font-size: 1.5em;
+    font-style: italic;
+}
