@@ -31,5 +31,6 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [X] Align the sticky search button so that it aligns with the very top of the tool when the user is at the top of the coach page
 - [X] Fix the spacing around the "Additional Questions" buttons to ensure that all of them have uniform spacing
 - [X] Remove the explaination text below individual subjects. Then, place the explaination "Click the checkbox if you want a subject included in the search" at the start of each section, as a way to cut down on unnecessary text.
-- [ ] Add in information text to inform user that information entered on the page will not be stored beyond using it to perform the search 
+- [X] Add in information text to inform user that information entered on the page will not be stored beyond using it to perform the search 
 - [X] Move info button to be right next to the subsection (subject) text. Additionally, have the info button grey out when the subject is disabled.
+- [X] Swap shield icon with hurtle icon
