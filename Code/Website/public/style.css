@@ -321,7 +321,7 @@ border-radius: 0% 0% 1em 1em;
     padding-top: 20px;
     padding-bottom: 10px;
     border-radius: 10px;
-    margin: 15px;
+    margin-bottom: var(--spacing_constant);
 }
 
 .subsection_title {
