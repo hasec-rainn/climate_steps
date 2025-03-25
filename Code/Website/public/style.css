@@ -25,6 +25,7 @@
     --cs_blue1: #335FAC;
     --cs_blue2: #82A1D0;
     
+    font-family: "Merriweather";
     --g: 1px; /*the gap in the thumb*/
     --il: 10px; /*Indent added to the left side of options in dropdown*/
     --w: 100%; /*width of the slider*/
