@@ -1,0 +1,26 @@
+img.solidarity {
+    width: 54vmin;
+    height: auto;
+}
+
+h1.intro {
+    color: white;
+    font-size: 3em;
+    text-align: left;
+    margin: 0;
+}
+
+.flexbox {
+    background-image: linear-gradient(to top, #176E4A, #142CB8);
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro.flexbox {
+    padding: 0px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
