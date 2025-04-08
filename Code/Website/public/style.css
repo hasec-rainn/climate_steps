@@ -25,7 +25,7 @@
     --cs_blue1: #335FAC;
     --cs_blue2: #82A1D0;
     
-    font-family: "Merriweather";
+    --font_fam: "Merriweather";
     --g: 1px; /*the gap in the thumb*/
     --il: 10px; /*Indent added to the left side of options in dropdown*/
     --w: 100%; /*width of the slider*/
@@ -41,6 +41,11 @@
     font-size: var(--txtsz);
     color: black;
 }
+
+.adv_search h1,h2,h3,h4,h5,h6,label {
+    font-family: var(--font_fam);
+}
+
 
 @media (pointer: fine) {
     .sticky_search {
@@ -112,6 +117,7 @@
 .tool_title.small { 
     margin: 0px;
     font-style: italic;
+    font-size: 1em;
 }
 
 .tool_title.large {
