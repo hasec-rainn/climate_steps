@@ -42,8 +42,8 @@
     color: black;
 }
 
-.adv_search h1,h2,h3,h4,h5,h6,label {
-    font-family: var(--font_fam);
+.adv_search h1,h2,h3,h4,h5,h6,label,p {
+    font-family: var(--font_fam) !important;
 }
 
 
@@ -639,9 +639,9 @@ cursor: pointer;
 /*Not actually a chevron: this is used to make the "More options" at the bottom
 of each section clickable*/
 .adv_search_drop_chevron.small_font {
-margin-top: -35px;
+/*margin-top: -35px;*/
 font-size: 1.5em;
-margin-bottom: var(--spacing_constant);
+/*margin-bottom: var(--spacing_constant);*/
 font-style: italic;
 text-decoration: underline;
 }
