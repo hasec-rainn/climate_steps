@@ -40,7 +40,7 @@ The code for the personalization tool can be found in `Code/Website/public/index
 # Final Changes
 - [X] Remove ability to toggle all sliders on/off
 - [X] Ensure only first letter of each header/choice is capitalized
-- [ ] Rename slider/selection titles to make (i) unnecessary
+- [X] Rename slider/selection titles to make (i) unnecessary
     - [X] My Impact on Emissions -> Emissions at this level
     - [X] I'm into Enviornmental Justice for my -> Environmental justice for my
     - [X] I Want to Impact the Health of -> The health of:
@@ -53,5 +53,5 @@ The code for the personalization tool can be found in `Code/Website/public/index
     - [X] Skills -> I want my actions to demand of me or teach me
 
 - [X] Remove "Ease (Mental)"
-- [ ] For Which Generation: change choices to "current" and "future"
+- [X] For Which Generation: change choices to "current" and "future"
 - [ ]

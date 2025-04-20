@@ -1,16 +1,3 @@
-/*slider_id is the id of the slider composite to be disabled or enabled,
-checkbox is the checkbox that will perform the toggle when clicked, 
-title_id is the title that will be greyed out, and info_id is the info icon
-that will be greyed out*/
-function toggleSlider(checkbox, slider_id, title_id, info_id) {
-    document.getElementById(checkbox).addEventListener("click", (event) => {
-            document.getElementById(slider_id).classList.toggle("disabled_element")
-            document.getElementById(title_id).classList.toggle("disabled_title")
-            document.getElementById(info_id).classList.toggle("disabled_title")
-        });
-
-}
-
 /* toggles between hiding and showing the element `drop_down` */
 function toggleDropDown(drop_down, c) {
     //opens and closes the dropdown
@@ -46,9 +33,6 @@ function location_updater(slider, slider_list) {
     })  
 }
 
-
-
-
 //Health Impact
 const health_impact = document.querySelector("#health_impact");
 const hi_list = document.getElementById("hi_list").options;
@@ -68,11 +52,6 @@ health_impact.addEventListener("click", (event) => {
     }
 });
 
-toggleSlider("hi_checkbox", "hi_slider_composite", "hi_title", "hi_info");
-
-
-
-
 //Lineage Impact
 const lineage_impact = document.querySelector("#lineage_impact");
 const li_list = document.getElementById("li_list").options;
@@ -83,19 +62,12 @@ lineage_impact.addEventListener("click", (event) => {
         li_list[i].classList.remove("bold_tick");
     }
 
-    if (event.target.value < 13) {
+    if (event.target.value < 60) {
         li_list[0].classList.add("bold_tick");
-    } else if (event.target.value < 38) {
-        li_list[1].classList.add("bold_tick");
-    } else if (event.target.value < 61) {
-        li_list[2].classList.add("bold_tick");
     } else {
-        li_list[3].classList.add("bold_tick");
+        li_list[1].classList.add("bold_tick");
     }
 });
-toggleSlider("li_checkbox", "li_slider_composite","li_title", "li_info");
-
-
 
 //Lineage Impact
 const biodiversity_impact = document.querySelector("#biodiversity_impact");
@@ -115,7 +87,6 @@ biodiversity_impact.addEventListener("click", (event) => {
         bi_list[2].classList.add("bold_tick");
     }
 });
-toggleSlider("bi_checkbox", "bi_slider_composite","bi_title");
 
 
 
@@ -123,7 +94,6 @@ toggleSlider("bi_checkbox", "bi_slider_composite","bi_title");
 const carbon_impact = document.querySelector("#carbon_impact");
 const ci_list = document.getElementById("ci_list").options;
 location_updater(carbon_impact, ci_list);
-toggleSlider("ci_checkbox", "ci_slider_composite","ci_title","ci_info");
 
 
 
@@ -131,25 +101,11 @@ toggleSlider("ci_checkbox", "ci_slider_composite","ci_title","ci_info");
 const enviornmental_justice = document.querySelector("#enviornmental_justice");
 const ej_list = document.getElementById("ej_list").options;
 location_updater(enviornmental_justice, ej_list);
-toggleSlider("ej_checkbox", "ej_slider_composite", "ej_title","ej_info");
-
-
-
-//Action Range
-const mental_ease = document.querySelector("#mental_ease");
-const ar_list = document.getElementById("ar_list").options;
-location_updater(mental_ease, ar_list);
-toggleSlider("me_checkbox", "me_slider_composite", "me_title","me_info");
-
-
 
 //Action Location
 const action_location = document.querySelector("#action_location");
 const al_list = document.getElementById("al_list").options;
 location_updater(action_location, al_list);
-toggleSlider("al_checkbox", "al_slider_composite","al_title","al_info");
-
-
 
 //Ease
 const ease = document.querySelector("#ease");
@@ -170,7 +126,6 @@ ease.addEventListener("click", (event) => {
         e_list[3].classList.add("bold_tick");
     }
 })
-toggleSlider("e_checkbox", "e_slider_composite", "e_title", "e_info");
 
 
 
@@ -191,9 +146,6 @@ skills.addEventListener("click", (event) => {
         as_list[2].classList.add("bold_tick");
     }
 })
-toggleSlider("as_checkbox", "as_slider_composite", "as_title", "as_info");
-
-
 
 //Social Acceptability
 const social_acceptability = document.querySelector("#social_acceptability");
@@ -214,7 +166,6 @@ social_acceptability.addEventListener("click", (event) => {
         sa_list[3].classList.add("bold_tick");
     }
 })
-toggleSlider("sa_checkbox", "sa_slider_composite", "sa_title", "sa_info");
 
 
 
@@ -237,7 +188,6 @@ action_financing.addEventListener("click", (event) => {
         af_list[3].classList.add("bold_tick");
     }
 })
-toggleSlider("af_checkbox", "af_slider_composite", "af_title", "af_info");
 
 
 
@@ -258,10 +208,9 @@ sociality.addEventListener("click", (event) => {
         s_list[2].classList.add("bold_tick");
     }
 })
-toggleSlider("s_checkbox", "s_slider_composite", "s_title", "s_info");
 
 if (sociality) {
     console.log("Yes, it exists!")
 } else {
     console.log("No, it doesn't!")
-}    
+}  
