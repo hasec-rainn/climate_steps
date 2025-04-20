@@ -36,3 +36,23 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [X] Swap shield icon with hurtle icon
 - [X] Change blue color to be lighter
 - [X] Add a bit more space above titles of blue sections
+
+# Final Changes
+- [ ] Remove ability to toggle all sliders on/off
+- [ ] Ensure only first letter of each header/choice is capitalized
+- [ ] Rename slider/selection titles to make (i) unnecessary
+    - [X] My Impact on Emissions -> Emissions at this level
+    - [ ] I'm into Enviornmental Justice for my -> Environmental justice for my
+    - [ ] I Want to Impact the Health of -> The health of:
+    - [ ] Biodiversity Impact Scale -? Biodiversity
+    - [ ] Ease -> I can put in this level of time
+    - [ ] Financing -> My action's cost can be
+    - [ ] Social Acceptability -> Social acceptance of my action
+    - [ ] Location Focus -> I want to take action at this scale
+    - [ ] Remove "Ease (Mental)"
+    - [ ] Sociality -> I want the actions to be
+    - [ ] Skills -> I want my actions to demand of me or teach me
+
+
+- [ ] For Which Generation: change choices to "current" and "future"
+- [ ]
