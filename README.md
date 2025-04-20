@@ -54,4 +54,4 @@ The code for the personalization tool can be found in `Code/Website/public/index
 
 - [X] Remove "Ease (Mental)"
 - [X] For Which Generation: change choices to "current" and "future"
-- [ ]
+- [X] Change slider colors to match CS colors

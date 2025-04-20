@@ -364,18 +364,18 @@ option {
 }
 
 .barrier_slider {
---tc: #e24545; /* thumb color*/
---bc: #e69898; /* background color*/
---fc:  #e69898; /*#8a0000 foreground color*/
-appearance: none;
-background: none;
-cursor: pointer;
-overflow: hidden;
+    --tc: var(--cs_red1);  /*#b8ba3b thumb color*/
+    --bc: var(--cs_blue1); /*#787033 /*background color*/
+    --fc: var(--cs_blue1); /*#787033 foreground color*/
+    appearance: none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
 
 
-width: var(--w);
-height: var(--h);
-border-radius: 42%;
+    width: var(--w);
+    height: var(--h);
+    border-radius: 42%;
 }
 
 .barrier_slider::-webkit-slider-thumb {
@@ -437,9 +437,9 @@ clip-path: polygon(
 }
 
 .motivator_slider {
---tc: #46e353; /*#3cbf47 thumb color */
---bc: #81B855; /*#4b6b32 background color*/
---fc:  #81B855; /*#4b6b32 foreground color*/
+--tc: var(--cs_red1);  /*#b8ba3b thumb color*/
+--bc: var(--cs_blue1); /*#787033 /*background color*/
+--fc: var(--cs_blue1); /*#787033 foreground color*/
 appearance: none;
 background: none;
 cursor: pointer;
@@ -512,9 +512,9 @@ clip-path: polygon(
 
 
 .logistic_slider {
---tc: #e0e346;  /*#b8ba3b thumb color*/
---bc: #edeeae; /*#787033 /*background color*/
---fc: #edeeae; /*#787033 foreground color*/
+--tc: var(--cs_red1);  /*#b8ba3b thumb color*/
+--bc: var(--cs_blue1); /*#787033 /*background color*/
+--fc: var(--cs_blue1); /*#787033 foreground color*/
 appearance: none;
 background: none;
 cursor: pointer;
