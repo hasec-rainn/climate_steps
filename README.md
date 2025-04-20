@@ -38,7 +38,7 @@ The code for the personalization tool can be found in `Code/Website/public/index
 - [X] Add a bit more space above titles of blue sections
 
 # Final Changes
-- [ ] Remove ability to toggle all sliders on/off
+- [X] Remove ability to toggle all sliders on/off
 - [X] Ensure only first letter of each header/choice is capitalized
 - [ ] Rename slider/selection titles to make (i) unnecessary
     - [X] My Impact on Emissions -> Emissions at this level
@@ -52,6 +52,6 @@ The code for the personalization tool can be found in `Code/Website/public/index
     - [X] Sociality -> I want the actions to be
     - [X] Skills -> I want my actions to demand of me or teach me
 
-- [ ] Remove "Ease (Mental)"
+- [X] Remove "Ease (Mental)"
 - [ ] For Which Generation: change choices to "current" and "future"
 - [ ]
